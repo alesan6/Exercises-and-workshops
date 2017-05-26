@@ -1,0 +1,12 @@
+#toggle-menu {
+    display: none;  /*dla wszystkich div menu ukryty.*/
+}
+
+@media (max-width: 500px){ /*ale dla ekranów do 500px: */
+    .mobile-section ul {
+        display: none; /*schowaj listę ul*/
+    }
+    ul.open, #toggle-menu { /*pokaz div menu i na kliki dodaj klasę open*/
+        display: block;
+    }
+}

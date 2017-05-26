@@ -1,0 +1,17 @@
+@keyframes zombie_walk {
+    0% {background-position: 0 0;
+    }
+    100% {background-position: -2000px 0;
+    }
+}
+
+.zombie {
+    height: 312px;
+    width: 200px;
+    background: url('../walkingdead.png');
+    background-repeat: no-repeat;
+    animation: zombie_walk;
+    animation-duration: 600ms;
+    animation-timing-function: steps(10);
+    animation-iteration-count: infinite;
+}

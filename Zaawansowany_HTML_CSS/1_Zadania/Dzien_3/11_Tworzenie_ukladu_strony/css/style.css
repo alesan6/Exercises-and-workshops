@@ -1,0 +1,37 @@
+* {
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+.title {
+    background-image: url('../images/night-sky.jpg');
+    background-repeat: no-repeat;
+    width: 100;
+    background-size: cover;
+}
+.container {
+    width: 1200px;
+    margin: 0 200px;
+}
+.small-box {
+    float: left;
+    width: 33.33%;
+    background-color: lightblue;
+    color: black;
+    padding-right: 20px;
+    margin-top: 4px;
+}
+section:after {
+    clear: both;
+    display: block;
+    content: "";
+}
+.second-box {
+    background-color: blue;
+    width: 50%;
+    float: left;
+    margin-top: 4px;
+}
+footer {
+    background-color: navy;
+    margin-top: 4px;

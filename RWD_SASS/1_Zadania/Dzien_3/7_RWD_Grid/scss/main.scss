@@ -1,0 +1,33 @@
+*{
+    box-sizing: border-box; // musi byc zeby dobrze paddingi dzialaly
+}
+
+$base-width: 100%/12; // zmienna ułatwiająca tworzenie poszczegónych kolumn
+
+.container {
+width: 100%;
+max-width: 1200px;
+
+    .row{
+        margin-top: -10px;
+        margin-bottom: -10px;
+        &:before, &:after{
+            content: "";
+            display: table;
+            clear: both;
+        }
+        [class*="col-"]{
+            min-height: 1px;
+            float: left;
+            width: $base-width;
+            padding: 10px 0;
+            border: 1px solid red;
+            word-wrap: break-word;
+        }
+        @for $i from 1 through 12{   // pętla do tworzenia szerokości kolumn w row.
+            .col-#{$i}{
+                width: $base-width * $i;
+            }
+        }
+    }
+}

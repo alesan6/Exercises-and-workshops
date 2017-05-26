@@ -1,0 +1,82 @@
+html {
+    font-size : 8px;
+}
+
+.test {
+    font-size: 25px;
+
+    p{
+        font-size: 150%;
+    }
+}
+//Zadanie1.
+.panel {
+    font-size: 40px;
+
+    p {
+        font-size: 0.5em;
+    }
+}
+//Zadanie2.
+.bg_box {
+    font-size: 15px;
+    .box {
+        font-size: 2em;
+        width: 2em;
+    }
+}
+//Zadanie3.
+.container {
+    p {
+        font-size: 3rem;
+    }
+//Zadanie4.
+    .wolf_text {
+        border: 1px solid blue;
+        width: 30rem;
+    }
+}
+//Zadanie5.
+.winnie_the_pooh {
+    font-size: 10px;
+
+    blockquote {
+        font-size: 300%;
+    }
+}
+//Zadanie6.
+.images {
+    // width: 80%;
+    border: 2px solid green;
+    .img_one {
+        background-image: url(../images/cat.jpg);
+        background-size: cover;
+        background-position: center center;
+        background-repeat: no-repeat;
+        height: 300px;
+        width: 30%;
+    }
+}
+//Zadanie7.
+//948.8px  przy towartej consoli, łapie szerokosc calego okna.
+
+//Zadanie8.
+.test_hight_grandpa {
+    border: 1px solid black;
+    height: 50px;
+    .test_height_daddy {
+        border: 3px solid red;
+        // height: 200%;
+        .test_height_baby {
+            border: 2px solid navy;
+            height: 50%;
+        }
+    }
+}
+//Zadanie9.
+// .test_height_baby zmniejsza się odnosząc sie do grandpa.
+
+//Zadanie10.
+h1 {
+    margin: 50vh 50vw; 
+}

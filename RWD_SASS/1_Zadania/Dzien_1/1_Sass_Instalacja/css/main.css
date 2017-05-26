@@ -1,0 +1,6 @@
+body {
+  background: grey; }
+
+body h1 {
+  color: red; }
+// zmiany w cssie nie zapisują się, ważniejszy jest scss, pracujemy w sassie.

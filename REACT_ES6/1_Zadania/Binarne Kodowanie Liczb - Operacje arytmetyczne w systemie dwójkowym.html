@@ -1,0 +1,2093 @@
+
+<!-- saved from url=(0045)http://eduinf.waw.pl/inf/alg/006_bin/0012.php -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-2">
+
+<meta http-equiv="Content-Language" content="pl">
+<title>Binarne Kodowanie Liczb - Operacje arytmetyczne w systemie dwójkowym</title><meta name="keywords" content="system binarny,system dwójkowy,operacje arytmetyczne,operacje logiczne,arytmetyka dwójkowa,arytmetyka binarna,logika dwójkowa,logika binarna,algebra Boole&#39;a,dodawanie binarne,dodawanie dwójkowe,odejmowanie binarne,odejmowanie dwójkowe,mnożenie binarne,mnożenie dwójkowe,dzielenie binarne,dzielenie dwójkowe">
+<meta name="description" content="Rozdział prezentuje podstawowe zasady wykonywania operacji arytmetycznych na liczbach binarnych. Opisane są również podstawowe operacje logiczne and,or,not i xor">
+<link rel="stylesheet" type="text/css" href="./Binarne Kodowanie Liczb - Operacje arytmetyczne w systemie dwójkowym_files/001.css">
+<script src="./Binarne Kodowanie Liczb - Operacje arytmetyczne w systemie dwójkowym_files/ca-pub-2048408300128807.js.pobrane"></script><script type="text/javascript" language="javascript" src="./Binarne Kodowanie Liczb - Operacje arytmetyczne w systemie dwójkowym_files/h.js.pobrane"></script>
+<!--<base target="_top">--><base href="." target="_top"><script async="" src="./Binarne Kodowanie Liczb - Operacje arytmetyczne w systemie dwójkowym_files/adsbygoogle.js.pobrane"></script>
+<script>
+  (adsbygoogle = window.adsbygoogle || []).push({
+    google_ad_client: "ca-pub-2048408300128807",
+    enable_page_level_ads: true
+  });
+</script>
+</head>
+
+<body waid71fa0d88-5390-4b5b-a2f4-e45fa93d85e2="SA password protect entry checker" cz-shortcut-listen="true">
+<table border="0" width="100%" cellpadding="0" style="border-collapse: collapse">
+  <tbody><tr>
+    <td width="164" style="text-align: left" valign="top" class="menu_l"><a href="http://www.i-lo.tarnow.pl/"><img border="0" src="./Binarne Kodowanie Liczb - Operacje arytmetyczne w systemie dwójkowym_files/i-lo_logo.gif" width="164" height="170" style="margin-top: 12px" alt="Do strony głównej I LO w Tarnowie"></a></td>
+    <td style="text-align: center" valign="top" class="menu_m" nowrap="">
+    <span id="nav" style="margin-top: 0; margin-bottom: 0">&nbsp;</span>
+    <a class="exit" href="http://eduinf.waw.pl/inf/index.php"><span>Wyjście </span></a><a class="cont" href="http://eduinf.waw.pl/inf/alg/006_bin/index.php"><span>Spis treści </span></a><a class="prev" href="http://eduinf.waw.pl/inf/alg/006_bin/0011.php"><span>Poprzedni </span></a><a class="next" href="http://eduinf.waw.pl/inf/alg/006_bin/0013.php"><span>Następny </span></a>
+<p>
+    <img border="0" src="./Binarne Kodowanie Liczb - Operacje arytmetyczne w systemie dwójkowym_files/000_title.jpg" width="640" height="63"></p>
+    <span class="small">Prezentowane materiały są przeznaczone dla uczniów szkół ponadgimnazjalnych</span>.<br>
+    Autor artykułu: mgr Jerzy Wałaszek,&nbsp; wersja 4.1</td>
+    <td style="padding:8px; text-align: center" valign="top" class="menu_r" nowrap="" width="200">
+    <p class="small" style="line-height: 100%; margin-bottom: 0">&nbsp;&#169;2008 mgr Jerzy Wałaszek<br>
+    I LO w Tarnowie</p>
+    <p><img border="0" src="./Binarne Kodowanie Liczb - Operacje arytmetyczne w systemie dwójkowym_files/000_logo.jpg" width="190" height="167"></p>
+    </td>
+  </tr>
+  <tr>
+    <td style="text-align: center" colspan="3" height="100">
+<script async="" src="./Binarne Kodowanie Liczb - Operacje arytmetyczne w systemie dwójkowym_files/adsbygoogle.js.pobrane"></script>
+<!-- normal_page -->
+<ins class="adsbygoogle" style="display: block; height: 90px;" data-ad-client="ca-pub-2048408300128807" data-ad-slot="9328341371" data-ad-format="auto" data-adsbygoogle-status="done"><ins id="aswift_1_expand" style="display:inline-table;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:1200px;background-color:transparent"><ins id="aswift_1_anchor" style="display:block;border:none;height:90px;margin:0;padding:0;position:relative;visibility:visible;width:1200px;background-color:transparent"><iframe width="1200" height="90" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_1" name="aswift_1" style="left:0;position:absolute;top:0;" src="./Binarne Kodowanie Liczb - Operacje arytmetyczne w systemie dwójkowym_files/saved_resource.html"></iframe></ins></ins></ins>
+<script>
+(adsbygoogle = window.adsbygoogle || []).push({});
+</script>    
+    </td>
+  </tr>
+  </tbody></table>
+		<h1 class="main"><a name="Operacje_Arytmetyczne">
+Operacje arytmetyczne w systemie dwójkowym</a></h1>
+<hr color="#336699" size="1">
+<table border="0" cellpadding="4" style="border-collapse: collapse" bordercolor="#000000" class="bl2" id="table139">
+	<tbody><tr>
+		<td><b>Podrozdziały</b></td>
+		<td><b>Tematy pokrewne</b></td>
+	</tr>
+	<tr>
+		<td valign="top">
+        <p style="margin-top: 0pt; margin-bottom: 0pt;" class="mlink">
+        <a href="http://eduinf.waw.pl/inf/alg/006_bin/0012.php#Operacje_Arytmetyczne">Operacje Arytmetyczne w systemie dwójkowym</a></p>
+        <p style="margin-top: 0pt; margin-bottom: 0pt;" class="mlink">
+        <span class="small"><a href="http://eduinf.waw.pl/inf/alg/006_bin/0012.php#Dodawanie">Dodawanie dwójkowe</a></span>
+        </p>
+        <p style="margin-top: 0pt; margin-bottom: 0pt;" class="mlink">
+        <span class="small"><a href="http://eduinf.waw.pl/inf/alg/006_bin/0012.php#Odejmowanie">Odejmowanie dwójkowe</a></span>
+        </p>
+        <p style="margin-top: 0pt; margin-bottom: 0pt;" class="mlink">
+        <span class="small"><a href="http://eduinf.waw.pl/inf/alg/006_bin/0012.php#Mno%BFenie">Mnożenie dwójkowe</a></span>
+        </p>
+        <p style="margin-top: 0pt; margin-bottom: 0pt;" class="mlink">
+        <span class="small"><a href="http://eduinf.waw.pl/inf/alg/006_bin/0012.php#Dzielenie">Dzielenie dwójkowe</a></span><br>
+        <a href="http://eduinf.waw.pl/inf/alg/006_bin/0012.php#Zadania">Zadania</a></p></td>
+		<td valign="top">
+		<p class="mlink">
+        <a href="http://eduinf.waw.pl/inf/alg/006_bin/0009.php">Kody binarne</a><br>
+        <a href="http://eduinf.waw.pl/inf/alg/006_bin/0010.php">Naturalny 
+			system dwójkowy</a><br>
+        <a href="http://eduinf.waw.pl/inf/alg/006_bin/0011.php">Dwójkowy 
+			system stałoprzecinkowy</a><br>
+        <a href="http://eduinf.waw.pl/inf/alg/006_bin/0013.php">Operacje 
+			logiczne na bitach</a><br>
+        <a href="http://eduinf.waw.pl/inf/alg/006_bin/0014.php">Konwersje 
+			dwójkowo ósemkowe i szesnastkowe</a></p></td>
+	</tr>
+</tbody></table>
+<div class="bl2">
+  <p>&nbsp;</p></div>
+<p class="bl1">Zasady arytmetyki w systemie binarnym są identyczne <span class="rem">(prawie)</span> jak w dobrze 
+	nam znanym systemie dziesiętnym. Zaletą arytmetyki binarnej jest jej 
+	prostota, dzięki czemu można ją tanio realizować za pomocą układów 
+	elektronicznych.</p>
+<p class="bl1">Poniżej opisujemy zasady wykonywania podstawowych działań arytmetycznych 
+	wraz z odpowiednimi przykładami.</p>
+<p class="bl1">&nbsp;</p>
+<h2 class="bl1"><a name="Dodawanie">
+Dodawanie dwójkowe</a></h2>
+<div class="bl1">
+<p class="bl1">Do wykonywania dodawania niezbędna jest znajomość tabliczki dodawania, 
+	czyli wyników sumowania każdej cyfry z każdą inną. W systemie binarnym mamy 
+	tylko dwie cyfry 0 i 1, zatem tabliczka dodawania jest niezwykle prosta i 
+	składa się tylko z 4 pozycji:</p>
+<p class="bl1">&nbsp;</p>
+<table id="table81" border="0" cellpadding="0" cellspacing="0" class="bl2">
+	<tbody><tr>
+		<td>0 + 0 =<span style="font-style: normal;" lang="en">&nbsp;</span></td>
+		<td align="right">0</td>
+	</tr>
+	<tr>
+		<td>0 + 1 =&nbsp;</td>
+		<td align="right">1</td>
+	</tr>
+	<tr>
+		<td>1 + 0 =&nbsp;</td>
+		<td align="right">1</td>
+	</tr>
+	<tr>
+		<td>1 + 1 =&nbsp;</td>
+		<td align="right"><b><font color="#FF0000">1</font></b>0</td>
+	</tr>
+</tbody></table>
+<p>&nbsp;</p><p class="bl1">
+<b>Przykład:</b></p>
+<p class="bl2">Zsumować liczby binarne 
+			1111001<sub>(2)</sub> 
+		oraz 10010<sub>(2)</sub>.</p>
+	<div class="bl1">
+		<div class="bl1">
+			<ol>
+  <li>Sumowane liczby zapisujemy jedna pod drugą tak, aby w kolejnych 
+			kolumnach znalazły się cyfry stojące na pozycjach o tych samych 
+			wagach <span class="rem">(identycznie postępujemy w systemie dziesiętnym zapisując 
+			liczby w słupkach przed sumowaniem)</span>:</li>
+</ol>
+<table id="table82" border="0" cellpadding="0" cellspacing="0" class="bl2">
+	<tbody><tr>
+		<td><span style="font-style: normal;" lang="en">&nbsp;</span></td>
+		<td align="right">1111001</td>
+	</tr>
+	<tr>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">
+		<span style="font-style: normal;">+</span><span style="font-style: normal;" lang="en">&nbsp;</span></td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);" align="right">10010</td>
+	</tr>
+</tbody></table>
+<p>&nbsp;</p><ol start="2">
+  <li>Sumowanie rozpoczynamy od ostatniej kolumny. Sumujemy cyfry w 
+			kolumnie zgodnie z podaną tabelką zapisując wynik pod kreską:</li>
+</ol>
+<table id="table83" border="0" cellpadding="0" cellspacing="0" class="bl2">
+	<tbody><tr>
+		<td><span style="font-style: normal;" lang="en">&nbsp;</span></td>
+		<td align="right">1111001</td>
+	</tr>
+	<tr>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">
+		<span style="font-style: normal;">+</span><span style="font-style: normal;" lang="en">&nbsp;</span></td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);" align="right">10010</td>
+	</tr>
+	<tr>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">&nbsp;</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;" align="right">1011</td>
+	</tr>
+</tbody></table>
+<p>&nbsp;</p><ol>
+				<li value="3">Jeśli wynik sumowania jest dwucyfrowy (1 + 1 = 10), to 
+			pod kreską zapisujemy tylko ostatnią cyfrę 0, a 1 przechodzi do 
+			następnej kolumny - dodamy ją do wyniku sumowania cyfr w następnej 
+			kolumnie. Jest to tzw. przeniesienie <span class="rem">(ang. carry)</span>. Przeniesienie 
+			zaznaczyliśmy na czerwono:</li>
+</ol>
+<table id="table84" border="0" cellpadding="0" cellspacing="0" class="bl2">
+	<tbody><tr>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td><span style="font-style: normal;"><font color="#ff0000" size="1">1</font></span></td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td>1</td>
+		<td>1</td>
+		<td>1</td>
+		<td>1</td>
+		<td>0</td>
+		<td>0</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">+&nbsp;</td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">&nbsp;</td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">&nbsp;</td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">1</td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">0</td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">0</td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">1</td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">0</td>
+	</tr>
+	<tr>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">&nbsp;</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">&nbsp;</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">&nbsp;</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+	</tr>
+</tbody></table>
+<p>&nbsp;</p><ol>
+  <li value="4">Jeśli w krótszej liczbie zabrakło cyfr, to dopisujemy 
+			zera. Pamiętajmy o przeniesieniach.</li>
+</ol>
+<table id="table85" border="0" cellpadding="0" cellspacing="0" class="bl2">
+	<tbody><tr>
+		<td align="right"><span style="font-style: normal;">
+		<font color="#ff0000" size="1">1</font></span></td>
+		<td align="right"><span style="font-style: normal;">
+		<font color="#ff0000" size="1">1</font></span></td>
+		<td align="right"><span style="font-style: normal;">
+		<font color="#ff0000" size="1">1</font></span></td>
+		<td align="right">&nbsp;</td>
+		<td align="right">&nbsp;</td>
+		<td align="right">&nbsp;</td>
+		<td align="right">&nbsp;</td>
+		<td align="right">&nbsp;</td>
+	</tr>
+	<tr>
+		<td><span style="font-style: normal;" lang="en">&nbsp;</span></td>
+		<td><span style="font-style: normal;">1</span></td>
+		<td><span style="font-style: normal;">1</span></td>
+		<td><span style="font-style: normal;">1</span></td>
+		<td><span style="font-style: normal;">1</span></td>
+		<td><span style="font-style: normal;">0</span></td>
+		<td><span style="font-style: normal;">0</span></td>
+		<td><span style="font-style: normal;">1</span></td>
+	</tr>
+	<tr>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">
+		<span style="font-style: normal;">+</span><span style="font-style: normal;" lang="en">&nbsp;</span></td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">
+		<span style="font-style: normal;">0</span></td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">
+		<span style="font-style: normal;">0</span></td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">
+		<span style="font-style: normal;">1</span></td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">
+		<span style="font-style: normal;">0</span></td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">
+		<span style="font-style: normal;">0</span></td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">
+		<span style="font-style: normal;">1</span></td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">
+		<span style="font-style: normal;">0</span></td>
+	</tr>
+	<tr>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">&nbsp;</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">
+		<span style="font-style: normal;">0</span></td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">
+		<span style="font-style: normal;">0</span></td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">
+		<span style="font-style: normal;">0</span></td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">
+		<span style="font-style: normal;">1</span></td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">
+		<span style="font-style: normal;">0</span></td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">
+		<span style="font-style: normal;">1</span></td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">
+		<span style="font-style: normal;">1</span></td>
+	</tr>
+</tbody></table>
+<p>&nbsp;</p><ol>
+  <li value="5">Dodaliśmy wszystkie cyfry, ale przeniesienie wciąż 
+			wynosi 1. Zatem dopisujemy je do otrzymanego wyniku 
+			<span class="rem">(możemy 
+			potraktować pustą kolumnę tak, jakby zawierała cyfry 0 i do wyniku 
+			sumowania dodać przeniesienie)</span>.</li>
+</ol>
+<table id="table86" border="0" cellpadding="0" cellspacing="0" class="bl2">
+	<tbody><tr>
+		<td align="right">&nbsp;</td>
+		<td align="right"><span style="font-style: normal;">
+		<font color="#ff0000" size="1">1</font></span></td>
+		<td align="right"><span style="font-style: normal;">
+		<font color="#ff0000" size="1">1</font></span></td>
+		<td align="right"><span style="font-style: normal;">
+		<font color="#ff0000" size="1">1</font></span></td>
+		<td align="right">&nbsp;</td>
+		<td align="right">&nbsp;</td>
+		<td align="right">&nbsp;</td>
+		<td align="right">&nbsp;</td>
+		<td align="right">&nbsp;</td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td>0</td>
+		<td>1</td>
+		<td>1</td>
+		<td>1</td>
+		<td>1</td>
+		<td>0</td>
+		<td>0</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">+&nbsp;</td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">0</td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">0</td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">0</td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">1</td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">0</td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">0</td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">1</td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">0</td>
+	</tr>
+	<tr>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">&nbsp;</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+	</tr>
+</tbody></table>
+<p>&nbsp;</p><p class="bl2">1111001<sub>(2)</sub> 
+		+ 10010<sub>(2)</sub> = 10001011<sub>(2)</sub> (121 + 18 = 139)</p>
+<p style="text-align: center;">&nbsp;</p>
+<p class="bl1">Oto kilka dalszych przykładów:</p>
+<table id="table87" border="0" cellpadding="0" cellspacing="8" class="bl2">
+	<tbody><tr>
+		<td>
+		<div align="center">
+			<table id="table88" style="margin-right: 24px;" border="0" cellpadding="0" cellspacing="0">
+				<tbody><tr>
+					<td align="right">&nbsp;</td>
+					<td align="right"><font color="#ff0000" size="1">
+					<span style="font-style: normal;">1</span></font></td>
+					<td align="right"><font color="#ff0000" size="1">
+					<span style="font-style: normal;">1</span></font></td>
+					<td align="right"><font color="#ff0000" size="1">
+					<span style="font-style: normal;">1</span></font></td>
+					<td align="right"><font color="#ff0000" size="1">
+					<span style="font-style: normal;">1</span></font></td>
+					<td align="right"><font color="#ff0000" size="1">
+					<span style="font-style: normal;">1</span></font></td>
+					<td align="right"><font color="#ff0000" size="1">
+					<span style="font-style: normal;">1</span></font></td>
+					<td align="right"><font color="#ff0000" size="1">
+					<span style="font-style: normal;">1</span></font></td>
+					<td align="right">&nbsp;</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td>0</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+				</tr>
+				<tr>
+					<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">+&nbsp;</td>
+					<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">0</td>
+					<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">0</td>
+					<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">0</td>
+					<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">0</td>
+					<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">0</td>
+					<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">0</td>
+					<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">0</td>
+					<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">1</td>
+				</tr>
+				<tr>
+					<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">&nbsp;</td>
+					<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+					<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+					<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+					<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+					<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+					<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+					<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+					<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+				</tr>
+			</tbody></table></div></td>
+		<td>
+		<div align="center">
+			<table id="table89" style="margin-left: 24px; margin-right: 24px;" border="0" cellpadding="0" cellspacing="0">
+				<tbody><tr>
+					<td align="right">&nbsp;</td>
+					<td align="right"><font color="#ff0000" size="1">
+					<span style="font-style: normal;">1</span></font></td>
+					<td align="right"><font color="#ff0000" size="1">
+					<span style="font-style: normal;">1</span></font></td>
+					<td align="right"><font color="#ff0000" size="1">
+					<span style="font-style: normal;">1</span></font></td>
+					<td align="right"><font color="#ff0000" size="1">
+					<span style="font-style: normal;">1</span></font></td>
+					<td align="right"><font color="#ff0000" size="1">
+					<span style="font-style: normal;">1</span></font></td>
+					<td align="right"><font color="#ff0000" size="1">
+					<span style="font-style: normal;">1</span></font></td>
+					<td align="right"><font color="#ff0000" size="1">
+					<span style="font-style: normal;">1</span></font></td>
+					<td align="right">&nbsp;</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td>0</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+				</tr>
+				<tr>
+					<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">+&nbsp;</td>
+					<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">0</td>
+					<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">0</td>
+					<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">0</td>
+					<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">0</td>
+					<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">0</td>
+					<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">1</td>
+					<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">0</td>
+					<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">1</td>
+				</tr>
+				<tr>
+					<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">&nbsp;</td>
+					<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+					<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+					<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+					<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+					<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+					<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+					<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+					<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+				</tr>
+			</tbody></table></div></td>
+		<td>
+		<div align="center">
+			<table id="table90" style="margin-left: 24px;" border="0" cellpadding="0" cellspacing="0">
+				<tbody><tr>
+					<td align="right">&nbsp;</td>
+					<td align="right">&nbsp;</td>
+					<td align="right"><font color="#ff0000" size="1">
+					<span style="font-style: normal;">1</span></font></td>
+					<td align="right"><font color="#ff0000" size="1">
+					<span style="font-style: normal;">1</span></font></td>
+					<td align="right"><font color="#ff0000" size="1">
+					<span style="font-style: normal;">1</span></font></td>
+					<td align="right"><font color="#ff0000" size="1">
+					<span style="font-style: normal;">1</span></font></td>
+					<td align="right">&nbsp;</td>
+					<td align="right">&nbsp;</td>
+					<td align="right">&nbsp;</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td>1</td>
+					<td>0</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>0</td>
+				</tr>
+				<tr>
+					<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">+&nbsp;</td>
+					<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">0</td>
+					<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">0</td>
+					<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">0</td>
+					<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">0</td>
+					<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">1</td>
+					<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">1</td>
+					<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">0</td>
+					<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">0</td>
+				</tr>
+				<tr>
+					<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">&nbsp;</td>
+					<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+					<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+					<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+					<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+					<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+					<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+					<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+					<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+				</tr>
+			</tbody></table></div></td>
+	</tr>
+</tbody></table>
+		</div>
+	</div>
+<p>&nbsp;</p>
+<div class="bl2">
+  <table border="1" cellspacing="0" cellpadding="4" class="note" style="border-collapse: collapse">
+    <tbody><tr>
+      <td>
+      <h4><font color="#FF0000">Uwaga, pułapka:</font></h4>
+      <p class="bl1">W pamięci komputera liczby binarne przechowywane są w postaci 
+			ustalonej ilości bitów <span class="rem">(np. 8, 16, 32 bity)</span>. Jeśli wynik sumowania np. dwóch liczb 8 bitowych jest większy niż 8 bitów, to najstarszy 
+			bit <span class="rem">(dziewiąty bit)</span> zostanie utracony. Sytuacja taka nazywa się 
+			<span class="b">nadmiarem</span> <span class="rem">(ang. overflow)</span> i występuje zawsze, 
+			gdy wynik operacji arytmetycznej jest większy niż górny zakres 
+			danego formatu liczb binarnych <span class="rem">(np. dla 8 bitów wynik większy od 2<sup>8</sup> 
+			- 1, czyli większy od 255)</span>:</p>
+      <p class="bl1">&nbsp;</p>
+      <p style="text-align: center;">11111111<sub>(2)</sub> + 00000001<sub>(2)</sub> 
+			= <b><font color="#ff0000">1</font></b>|00000000<sub>(2)</sub>&nbsp; 
+			(255 + 1 = 0)</p>
+      <p style="text-align: center;">&nbsp;</p>
+      <p class="bl1">Przy nadmiarze otrzymany wynik jest zawsze błędny, dlatego należy 
+			bardzo dokładnie analizować problem obliczeniowy i ustalić 
+			typy danych zgodnie z przewidywanym zakresem wartości otrzymywanych 
+			wyników. Zwykle kompilatory języków programowania posiadają opcję 
+			włączenia sprawdzania zakresów wyników operacji arytmetycznych na 
+			liczbach całkowitych <span class="rem">(w Dev-Pascalu jest to 
+			opcja menu Options/Compiler Options, a w 
+			okienku opcji na zakładce Code generation/Optimization 
+			zaznaczamy Check overflow of integer operations)</span>. 
+			Opcję tę włączamy w fazie testowania programu. Natomiast w gotowym 
+			produkcie należy ją wyłączyć, ponieważ wydłuża czas wykonywania 
+			operacji arytmetycznych.</p>
+      <p class="bl1">&nbsp;</p>
+      <div align="center">
+        <table border="0" cellpadding="0" style="border-collapse: collapse">
+          <tbody><tr>
+            <td>
+            <pre id="pas" class="example"><pre><span class="i">program</span> <span class="v">overflow</span>;
+
+<span class="c">{$APPTYPE CONSOLE}</span>
+
+<span class="i">var</span>
+  <span class="v">a</span> : <span class="v">byte</span>;     <span class="c">// dana 8 bitowa</span>
+  <span class="v">b</span> : <span class="v">word</span>;     <span class="c">// dana 16 bitowa</span>
+  <span class="v">c</span> : <span class="v">longword</span>; <span class="c">// dana 32 bitowa</span>
+<span class="i">begin</span>
+  <span class="v">a</span> := <span class="n">$FF</span>;     <span class="c">// wszystkie bity na 1</span>
+  <span class="v">b</span> := <span class="n">$FFFF</span>;<br>  <span class="v">c</span> := <span class="n">$FFFFFFFF</span>;<br>  <span class="v">writeln</span>(<span class="t">'                      8b    16b         32b'</span>);<br>  <span class="v">writeln</span>(<span class="t">'Przed dodaniem 1 : '</span>,<span class="v">a</span>:<span class="n">5</span>,<span class="v">b</span>:<span class="n">7</span>,<span class="v">c</span>:<span class="n">12</span>);<br>  <span class="v">inc</span>(<span class="v">a</span>); <span class="v">inc</span>(<span class="v">b</span>); <span class="v">inc</span>(<span class="v">c</span>); <span class="c">// dodajemy 1 do każdej zmiennej</span>
+  <span class="v">writeln</span>(<span class="t">'Po dodaniu 1     : '</span>,<span class="v">a</span>:<span class="n">5</span>,<span class="v">b</span>:<span class="n">7</span>,<span class="v">c</span>:<span class="n">12</span>);<br>  <span class="v">readln</span>;<br><span class="i">end</span>. </pre></pre>
+            </td>
+          </tr>
+        </tbody></table>
+      </div>
+      <p class="bl1">&nbsp;</p>
+      <div align="center">
+        <table id="table133" style="border-collapse: collapse;" border="0" cellpadding="4">
+          <tbody><tr>
+            <td>
+            <pre class="program">                      8b    16b         32b<br>Przed dodaniem 1 :   255  65535  4294967295<br>Po dodaniu 1     :     0      0           0</pre>
+            </td>
+          </tr>
+        </tbody></table>
+      </div>
+      </td>
+    </tr>
+  </tbody></table>
+  <p class="bl2">&nbsp;</p>
+</div>
+</div>
+<h2 class="bl1"><a name="Odejmowanie">
+Odejmowanie dwójkowe</a></h2>
+<div class="bl1">
+<p class="bl1">Przy odejmowaniu korzystamy z tabliczki odejmowania, która w systemie 
+	binarnym jest bardzo prosta:</p>
+<p class="bl1">&nbsp;</p>
+<table id="table92" border="0" cellpadding="0" cellspacing="0" class="bl2">
+	<tbody><tr>
+		<td>0 - 0 =&nbsp;</td>
+		<td nowrap="nowrap">0</td>
+	</tr>
+	<tr>
+		<td>0 - 1 =&nbsp;</td>
+		<td nowrap="nowrap">1 i pożyczka do 
+				następnej pozycji</td>
+	</tr>
+	<tr>
+		<td>1 - 0 =&nbsp;</td>
+		<td nowrap="nowrap">1</td>
+	</tr>
+	<tr>
+		<td>1 - 1 =&nbsp;</td>
+		<td nowrap="nowrap">0</td>
+	</tr>
+</tbody></table>
+<p>&nbsp;</p><p class="bl1">Odejmując 0 - 1 otrzymujemy wynik 1 i pożyczkę <span class="rem">(ang. borrow)</span> do następnej 
+	pozycji. Pożyczka oznacza konieczność odjęcia 1 od wyniku odejmowania cyfr w 
+	następnej kolumnie. Identycznie postępujemy w systemie dziesiętnym, tyle że 
+	tam jest to o wiele bardziej skomplikowane.</p>
+<p class="bl1">Na razie załóżmy, iż od liczb większych odejmujemy mniejsze 
+	<span class="rem">(w przeciwnym 
+	razie musielibyśmy wprowadzić liczby ujemne, a nie chcemy tego robić w tym 
+	miejscu)</span>.</p>
+<p class="bl1">&nbsp;</p>
+<p class="bl1">
+<b>Przykład:</b></p>
+<p class="bl2">Wykonać odejmowanie w systemie binarnym 
+			1101110<sub>(2)</sub> - 1111<sub>(2)</sub>.</p>
+	<div class="bl1">
+		<div class="bl1">
+			<ol>
+  <li>Obie liczby umieszczamy jedna pod drugą tak, aby ich cyfry 
+			znalazły się w kolumnach o tych samych wagach:</li>
+</ol>
+<table id="table93" border="0" cellpadding="0" cellspacing="0" class="bl2">
+	<tbody><tr>
+		<td>&nbsp;</td>
+		<td align="right">1101110</td>
+	</tr>
+	<tr>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">-&nbsp;</td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);" align="right">1111</td>
+	</tr>
+</tbody></table>
+<p>&nbsp;</p><ol>
+  <li value="2">Odejmowanie rozpoczynamy od cyfr ostatniej kolumny. 
+			Wyniki zapisujemy pod kreską. W tym przykładzie odjęcie ostatnich 
+			cyfr 0 - 1 daje wynik 1 oraz pożyczkę do następnej kolumny. Pożyczki 
+			zaznaczamy kolorem czerwonym.</li>
+</ol>
+<table id="table94" border="0" cellpadding="0" cellspacing="0" class="bl2">
+	<tbody><tr>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td><span style="font-style: normal;"><font color="#ff0000" size="1">1</font></span></td>
+		<td>&nbsp;</td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td>1</td>
+		<td>1</td>
+		<td>0</td>
+		<td>1</td>
+		<td>1</td>
+		<td>1</td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">-&nbsp;</td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">&nbsp;</td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">&nbsp;</td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">&nbsp;
+					</td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">1</td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">1</td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">1</td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">1</td>
+	</tr>
+	<tr>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">&nbsp;</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">&nbsp;</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">&nbsp;</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">&nbsp;
+					</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">&nbsp;
+					</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">&nbsp;
+					</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">&nbsp;
+					</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+	</tr>
+</tbody></table>
+<p>&nbsp;</p>
+			<ol>
+  <li value="3">
+  <p align="justify">Odjęcie cyfr w drugiej od końca kolumnie daje 
+				wynik 1 - 1 = 0. Od tego wyniku musimy odjąć pożyczkę 0 - 1 = 1 
+				i pożyczka do następnej kolumny.
+			</p></li>
+</ol>
+<table id="table95" border="0" cellpadding="0" cellspacing="0" class="bl2">
+	<tbody><tr>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td><font color="#ff0000" size="1">1</font></td>
+		<td><font color="#ff0000" size="1">1</font></td>
+		<td>&nbsp;</td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td>1</td>
+		<td>1</td>
+		<td>0</td>
+		<td>1</td>
+		<td>1</td>
+		<td>1</td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">-&nbsp;</td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">&nbsp;</td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">&nbsp;</td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">&nbsp;
+					</td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">1</td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">1</td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">1</td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">1</td>
+	</tr>
+	<tr>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">&nbsp;</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">&nbsp;</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">&nbsp;</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">&nbsp;
+					</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">&nbsp;
+					</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">&nbsp;
+					</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+	</tr>
+</tbody></table>
+<p>&nbsp;</p><p></p>
+			<ol>
+  <li value="4">
+  <p align="justify">Według tych zasad kontynuujemy odejmowanie cyfr w 
+			pozostałych kolumnach. Pamiętaj o pożyczkach! Jeśli w krótszej 
+			liczbie zabraknie cyfr, to możemy kolumny wypełnić zerami:
+		</p></li>
+</ol>
+<table id="table96" border="0" cellpadding="0" cellspacing="0" class="bl2">
+	<tbody><tr>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td><span style="font-style: normal;"><font color="#ff0000" size="1">1</font></span></td>
+		<td><span style="font-style: normal;"><font color="#ff0000" size="1">1</font></span></td>
+		<td><span style="font-style: normal;"><font color="#ff0000" size="1">1</font></span></td>
+		<td><font color="#ff0000" size="1"><span style="font-style: normal;">1</span></font></td>
+		<td><font color="#ff0000" size="1"><span style="font-style: normal;">1</span></font></td>
+		<td>&nbsp;</td>
+	</tr>
+	<tr>
+		<td>&nbsp;</td>
+		<td>1</td>
+		<td>1</td>
+		<td>0</td>
+		<td>1</td>
+		<td>1</td>
+		<td>1</td>
+		<td>0</td>
+	</tr>
+	<tr>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">-&nbsp;</td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">0</td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">0</td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">0</td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">1</td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">1</td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">1</td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">1</td>
+	</tr>
+	<tr>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">&nbsp;</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+	</tr>
+</tbody></table>
+<p>&nbsp;</p><p class="bl2">1101110<sub>(2)</sub> - 1111<sub>(2)</sub> 
+		= 1011111<sub>(2)</sub>&nbsp; (110<sub>(10)</sub> - 15<sub>(10)</sub> = 
+		95<sub>(10)</sub>).</p>
+<p style="text-align: center;">&nbsp;</p>
+<p class="bl1">Oto kilka dalszych przykładów:</p>
+<table id="table101" border="0" cellpadding="0" cellspacing="8" class="bl2">
+	<tbody><tr>
+		<td>
+		<div align="center">
+			<table id="table102" style="margin-right: 24px;" border="0" cellpadding="0" cellspacing="0">
+				<tbody><tr>
+					<td>&nbsp;</td>
+					<td><font color="#ff0000" size="1">1</font></td>
+					<td><font color="#ff0000" size="1">1</font></td>
+					<td><font color="#ff0000" size="1">1</font></td>
+					<td><font color="#ff0000" size="1">1</font></td>
+					<td width="4"><font color="#ff0000" size="1">1</font></td>
+					<td><font color="#ff0000" size="1">1</font></td>
+					<td><font color="#ff0000" size="1">1</font></td>
+					<td>&nbsp;</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td>1</td>
+					<td>0</td>
+					<td>0</td>
+					<td>0</td>
+					<td width="4">0</td>
+					<td>0</td>
+					<td>0</td>
+					<td>0</td>
+				</tr>
+				<tr>
+					<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">-&nbsp;</td>
+					<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">0</td>
+					<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">0</td>
+					<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">0</td>
+					<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">0</td>
+					<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);" width="4">0</td>
+					<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">0</td>
+					<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">0</td>
+					<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">1</td>
+				</tr>
+				<tr>
+					<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">&nbsp;</td>
+					<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+					<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+					<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+					<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+					<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;" width="4">1</td>
+					<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+					<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+					<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+				</tr>
+			</tbody></table></div></td>
+		<td>
+		<div align="center">
+			<table id="table103" style="margin-left: 24px; margin-right: 24px;" border="0" cellpadding="0" cellspacing="0">
+				<tbody><tr>
+					<td align="right">&nbsp;</td>
+					<td align="right">&nbsp;</td>
+					<td align="right">&nbsp;</td>
+					<td align="right">&nbsp;</td>
+					<td align="right"><font color="#ff0000" size="1">1</font></td>
+					<td align="right"><font color="#ff0000" size="1">1</font></td>
+					<td align="right"><font color="#ff0000" size="1">1</font></td>
+					<td align="right"><font color="#ff0000" size="1">1</font></td>
+					<td align="right">&nbsp;</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>1</td>
+					<td>0</td>
+					<td>0</td>
+					<td>0</td>
+					<td>0</td>
+				</tr>
+				<tr>
+					<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">-&nbsp;</td>
+					<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">0</td>
+					<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">0</td>
+					<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">0</td>
+					<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">0</td>
+					<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">1</td>
+					<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">1</td>
+					<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">1</td>
+					<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">1</td>
+				</tr>
+				<tr>
+					<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">&nbsp;</td>
+					<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+					<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+					<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+					<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+					<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+					<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+					<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+					<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+				</tr>
+			</tbody></table></div></td>
+		<td>
+		<div align="center">
+			<table id="table104" style="margin-left: 24px;" border="0" cellpadding="0" cellspacing="0">
+				<tbody><tr>
+					<td align="right">&nbsp;</td>
+					<td align="right"><font color="#ff0000" size="1">1</font></td>
+					<td align="right">&nbsp;</td>
+					<td align="right"><font color="#ff0000" size="1">1</font></td>
+					<td align="right">&nbsp;</td>
+					<td align="right"><font color="#ff0000" size="1">1</font></td>
+					<td align="right">&nbsp;</td>
+					<td align="right"><font color="#ff0000" size="1">1</font></td>
+					<td align="right">&nbsp;</td>
+				</tr>
+				<tr>
+					<td>&nbsp;</td>
+					<td>1</td>
+					<td>0</td>
+					<td>1</td>
+					<td>0</td>
+					<td>1</td>
+					<td>0</td>
+					<td>1</td>
+					<td>0</td>
+				</tr>
+				<tr>
+					<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">-&nbsp;</td>
+					<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">0</td>
+					<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">1</td>
+					<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">0</td>
+					<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">1</td>
+					<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">0</td>
+					<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">1</td>
+					<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">0</td>
+					<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">1</td>
+				</tr>
+				<tr>
+					<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">&nbsp;</td>
+					<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+					<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+					<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+					<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+					<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+					<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+					<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+					<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+				</tr>
+			</tbody></table></div></td>
+	</tr>
+</tbody></table>
+		</div>
+	</div>
+<p>&nbsp;</p>
+<div class="bl2">
+  <table border="1" cellspacing="0" cellpadding="4" class="note" style="border-collapse: collapse">
+    <tbody><tr>
+      <td>
+      <h4><font color="#FF0000">Uwaga, pułapka:</font></h4>
+		<p class="bl1">Przy odejmowaniu również może dochodzić do 
+        nieprawidłowych sytuacji. Jeśli od liczby mniejszej odejmiemy większą, 
+        to wynik będzie ujemny. Jednakże w naturalnym systemie binarnym nie 
+        można zapisywać liczb ujemnych. Zobaczmy zatem co się stanie, gdy od 
+        liczby 0 odejmiemy 1, a wynik ograniczymy do 8 bitów:</p>
+      <p class="bl1">&nbsp;</p>
+        <div align="center">
+          <table id="table136" border="0" cellpadding="0" cellspacing="0">
+            <tbody><tr>
+              <td>&nbsp;</td>
+              <td>
+              <font color="#ff0000" size="1">1</font></td>
+              <td>
+              <font color="#ff0000" size="1">1</font></td>
+              <td>
+              <font color="#ff0000" size="1">1</font></td>
+              <td>
+              <font color="#ff0000" size="1">1</font></td>
+              <td>
+              <font color="#ff0000" size="1">1</font></td>
+              <td>
+              <font color="#ff0000" size="1">1</font></td>
+              <td>
+              <font color="#ff0000" size="1">1</font></td>
+              <td>
+              <font color="#ff0000" size="1">1</font></td>
+              <td>&nbsp;</td>
+            </tr>
+            <tr>
+              <td>&nbsp;</td>
+              <td>&nbsp;</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+              <td>0</td>
+            </tr>
+            <tr>
+              <td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">
+              -&nbsp;</td>
+              <td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">&nbsp;</td>
+              <td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">
+              0</td>
+              <td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">
+              0</td>
+              <td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">
+              0</td>
+              <td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">
+              0</td>
+              <td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">
+              0</td>
+              <td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">
+              0</td>
+              <td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">
+              0</td>
+              <td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">
+              1</td>
+            </tr>
+            <tr>
+              <td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">&nbsp;</td>
+              <td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">
+              &nbsp;&nbsp;</td>
+              <td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">
+              1</td>
+              <td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">
+              1</td>
+              <td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">
+              1</td>
+              <td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">
+              1</td>
+              <td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">
+              1</td>
+              <td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">
+              1</td>
+              <td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">
+              1</td>
+              <td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">
+              1</td>
+            </tr>
+          </tbody></table>
+          <p>&nbsp;</p></div>
+        <p class="bl1">Otrzymujemy same jedynki, a pożyczka nigdy nie zanika. Sytuacja 
+			taka nazywa się <span class="b">niedomiarem</span> <span class="rem">(ang.&nbsp;underflow)</span> 
+			i występuje zawsze, gdy wynik operacji arytmetycznej jest mniejszy 
+			od dolnego zakresu formatu liczb binarnych <span class="rem">(dla naturalnego kodu 
+			dwójkowego wynik mniejszy od <nobr>zera)</nobr></span>. Oczywiście otrzymany rezultat 
+			jest błędny:</p>
+      <p class="bl1">&nbsp;</p>
+      <div align="center">
+        <table border="0" cellpadding="0" style="border-collapse: collapse">
+          <tbody><tr>
+            <td>
+            <pre id="pas" class="example"><pre><span class="i">program</span> <span class="v">underflow</span>;
+
+<span class="n">$APPTYPE</span> <span class="v">CONSOLE</span>}
+
+<span class="i">var</span>
+  <span class="v">a</span> : <span class="v">byte</span>;     <span class="c">// dana 8 bitowa</span>
+  <span class="v">b</span> : <span class="v">word</span>;     <span class="c">// dana 16 bitowa</span>
+  <span class="v">c</span> : <span class="v">longword</span>; <span class="c">// dana 32 bitowa</span>
+<span class="i">begin</span>
+  <span class="v">a</span> := <span class="n">0</span>;       <span class="c">// wszystkie bity na 0</span>
+  <span class="v">b</span> := <span class="n">0</span>;<br>  <span class="v">c</span> := <span class="n">0</span>;<br>  <span class="v">writeln</span>(<span class="t">'                          8b    16b         32b'</span>);<br>  <span class="v">writeln</span>(<span class="t">'Przed odejmowaniem 1 : '</span>,<span class="v">a</span>:<span class="n">5</span>,<span class="v">b</span>:<span class="n">7</span>,<span class="v">c</span>:<span class="n">12</span>);<br>  <span class="v">dec</span>(<span class="v">a</span>); <span class="v">dec</span>(<span class="v">b</span>); <span class="v">dec</span>(<span class="v">c</span>); <span class="c">// odejmujemy 1 od każdej zmiennej</span>
+  <span class="v">writeln</span>(<span class="t">'Po odejmowaniu 1     : '</span>,<span class="v">a</span>:<span class="n">5</span>,<span class="v">b</span>:<span class="n">7</span>,<span class="v">c</span>:<span class="n">12</span>);<br>  <span class="v">readln</span>;<br><span class="i">end</span>. </pre></pre>
+            </td>
+          </tr>
+        </tbody></table>
+      </div>
+      <p class="bl1">&nbsp;</p>
+        <div align="center">
+          <table id="table137" style="border-collapse: collapse;" border="0" cellpadding="4">
+            <tbody><tr>
+              <td>
+              <pre class="program">                          8b    16b         32b<br>Przed odejmowaniem 1 :     0      0           0<br>Po odejmowaniu 1     :   255  65535  4294967295</pre>
+              </td>
+            </tr>
+          </tbody></table>
+        </div>
+		</td>
+    </tr>
+  </tbody></table>
+  <p class="bl2">&nbsp;</p>
+</div>
+</div>
+<h2 class="bl1"><a name="Mnożenie">
+Mnożenie dwójkowe</a></h2>
+<div class="bl1">
+<p class="bl1">Naukę mnożenia binarnego rozpoczynamy od tabliczki mnożenia. Bez paniki - 
+	jest ona równie prosta jak podane powyżej tabliczki <a href="http://eduinf.waw.pl/inf/alg/006_bin/0012.php#Dodawanie">dodawania</a> i 
+<a href="http://eduinf.waw.pl/inf/alg/006_bin/0012.php#Odejmowanie">odejmowania</a>.</p>
+<p class="bl1">&nbsp;</p>
+<table id="table107" border="0" cellpadding="0" cellspacing="0" class="bl2">
+	<tbody><tr>
+		<td>0&nbsp;× 0 =&nbsp;</td>
+		<td align="right">0</td>
+	</tr>
+	<tr>
+		<td>0&nbsp;× 1 =&nbsp;</td>
+		<td align="right">0</td>
+	</tr>
+	<tr>
+		<td>1&nbsp;× 0 =&nbsp;</td>
+		<td align="right">0</td>
+	</tr>
+	<tr>
+		<td>1&nbsp;× 1 =&nbsp;</td>
+		<td align="right">1</td>
+	</tr>
+</tbody></table>
+<p>&nbsp;</p><p class="bl1">Tabliczka mnożenia binarnego <span class="rem">(podobnie jak w systemie dziesiętnym)</span> 
+	posłuży do tworzenia iloczynów częściowych cyfr mnożnej przez cyfry 
+	mnożnika. Iloczyny te następnie dodajemy wg opisanych zasad i otrzymujemy 
+	wynik mnożenia.</p>
+<p class="bl1">&nbsp;</p>
+<p class="bl1">
+<b>Przykład:</b></p>
+<p class="bl2">Pomnożyć binarnie liczbę 
+			1101<sub>(2)</sub> przez 
+			1011<sub>(2)</sub>.</p>
+	<div class="bl1">
+		<div class="bl1">
+			<ol>
+  <li>Obie liczby umieszczamy jedna pod drugą tak, aby ich cyfry 
+			znalazły się w kolumnach o tych samych wagach:</li>
+</ol>
+<table id="table111" border="0" cellpadding="0" cellspacing="0" class="bl2">
+	<tbody><tr>
+		<td>&nbsp;</td>
+		<td align="right">1101</td>
+	</tr>
+	<tr>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">×&nbsp;</td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);" align="right">1011</td>
+	</tr>
+</tbody></table>
+<p>&nbsp;</p><ol>
+  <li value="2">Każdą cyfrę mnożnej mnożymy przez poszczególne cyfry 
+			mnożnika zapisując wyniki mnożeń w odpowiednich kolumnach - tak samo 
+			postępujemy w systemie dziesiętnym, a tutaj jest nawet prościej, 
+			gdyż wynik mnożenia cyfry przez cyfrę jest zawsze jednocyfrowy:</li>
+</ol>
+<table id="table112" border="0" cellpadding="0" cellspacing="0" class="bl2">
+	<tbody><tr>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>1</td>
+		<td>1</td>
+		<td>0</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">×</td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">&nbsp;</td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">&nbsp;</td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">&nbsp;
+					</td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">1</td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">0</td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">1</td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">1</td>
+	</tr>
+	<tr>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">&nbsp;</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">&nbsp;</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">&nbsp;</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">&nbsp;
+					</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+	</tr>
+	<tr>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">&nbsp;</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">&nbsp;</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">&nbsp;</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">&nbsp;
+					</td>
+	</tr>
+	<tr>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">&nbsp;</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">&nbsp;</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">&nbsp;
+					</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">&nbsp;
+					</td>
+	</tr>
+	<tr>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">&nbsp;</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">&nbsp;
+					</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">&nbsp;
+					</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">&nbsp;
+					</td>
+	</tr>
+</tbody></table>
+<p>&nbsp;</p>
+<p class="bl2">Zwróć uwagę, iż wynikiem mnożenia mnożnej przez cyfrę 
+				mnożnika jest powtórzenie mnożnej z przesunięciem o pozycję 
+				cyfry <span class="rem">(cyfra mnożnika 1)</span> lub same zera 
+				<span class="rem">(cyfra mnożnika&nbsp;0)</span>. 
+				Spostrzeżenie to bardzo ułatwia konstrukcję układów mnożących.<br>
+</p>
+			<ol>
+  <li value="3">
+  <p align="justify">Puste kolumny uzupełniamy zerami i dodajemy 
+				do siebie wszystkie cyfry w kolumnach. Uważaj na przeniesienia.
+			</p></li>
+</ol>
+<table id="table113" border="0" cellpadding="0" cellspacing="0" class="bl2">
+	<tbody><tr>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>&nbsp;</td>
+		<td>1</td>
+		<td>1</td>
+		<td>0</td>
+		<td>1</td>
+	</tr>
+	<tr>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">×</td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">&nbsp;</td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">&nbsp;</td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">&nbsp;
+					</td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">1</td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">0</td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">1</td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">1</td>
+	</tr>
+	<tr>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">&nbsp;</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+	</tr>
+	<tr>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">&nbsp;</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+	</tr>
+	<tr>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">+</td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">1</td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">1</td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">0</td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">1</td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">0</td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">0</td>
+		<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">0</td>
+	</tr>
+	<tr>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+		<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+	</tr>
+</tbody></table>
+<p class="bl2">Sprawdź, czy otrzymany wynik jest poprawny.</p>
+<p>&nbsp;</p>
+<p class="bl1">Oto kilka dalszych przykładów:</p>
+<table id="table118" border="0" cellpadding="0" cellspacing="8" class="bl2">
+	<tbody><tr>
+		<td>
+		<table id="table119" style="margin-right: 24px;" border="0" cellpadding="0" cellspacing="0">
+			<tbody><tr>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>1</td>
+				<td>0</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">× 
+				</td>
+				<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">&nbsp;
+					</td>
+				<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">&nbsp;
+					</td>
+				<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">1</td>
+				<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">1</td>
+				<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">1</td>
+			</tr>
+			<tr>
+				<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">&nbsp;</td>
+				<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">&nbsp;
+					</td>
+				<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">&nbsp;
+					</td>
+				<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+				<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+				<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+			</tr>
+			<tr>
+				<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">&nbsp;</td>
+				<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">&nbsp;
+					</td>
+				<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+				<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+				<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+				<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">&nbsp;
+					</td>
+			</tr>
+			<tr>
+				<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">+</td>
+				<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">1</td>
+				<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">0</td>
+				<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">1</td>
+				<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">&nbsp;
+					</td>
+				<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">&nbsp;
+					</td>
+			</tr>
+			<tr>
+				<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+				<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+				<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+				<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+				<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+				<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+			</tr>
+		</tbody></table></td>
+		<td>
+		<table id="table120" style="margin-left: 24px; margin-right: 24px;" border="0" cellpadding="0" cellspacing="0">
+			<tbody><tr>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>1</td>
+				<td>0</td>
+				<td>1</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">×</td>
+				<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">&nbsp;</td>
+				<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">&nbsp;
+					</td>
+				<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">&nbsp;
+					</td>
+				<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">1</td>
+				<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">1</td>
+				<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">0</td>
+			</tr>
+			<tr>
+				<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">&nbsp;</td>
+				<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">&nbsp;</td>
+				<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">&nbsp;
+					</td>
+				<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+				<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+				<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+				<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+			</tr>
+			<tr>
+				<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">&nbsp;</td>
+				<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">&nbsp;</td>
+				<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+				<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+				<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+				<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+				<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">&nbsp;
+					</td>
+			</tr>
+			<tr>
+				<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">+</td>
+				<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">1</td>
+				<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">0</td>
+				<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">1</td>
+				<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">1</td>
+				<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">&nbsp;
+					</td>
+				<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">&nbsp;
+					</td>
+			</tr>
+			<tr>
+				<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+				<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+				<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+				<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+				<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+				<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+				<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+			</tr>
+		</tbody></table></td>
+		<td>
+		<table id="table121" style="margin-left: 24px;" border="0" cellpadding="0" cellspacing="0">
+			<tbody><tr>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>&nbsp;</td>
+				<td>1</td>
+				<td>1</td>
+				<td>1</td>
+			</tr>
+			<tr>
+				<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">×</td>
+				<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">&nbsp;
+					</td>
+				<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">&nbsp;
+					</td>
+				<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">1</td>
+				<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">1</td>
+				<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">1</td>
+			</tr>
+			<tr>
+				<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">&nbsp;</td>
+				<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">&nbsp;
+					</td>
+				<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">&nbsp;
+					</td>
+				<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+				<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+				<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+			</tr>
+			<tr>
+				<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">&nbsp;</td>
+				<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">&nbsp;
+					</td>
+				<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+				<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+				<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+				<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">&nbsp;
+					</td>
+			</tr>
+			<tr>
+				<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">+</td>
+				<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">1</td>
+				<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">1</td>
+				<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">1</td>
+				<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">&nbsp;
+					</td>
+				<td style="border-width: 1px; border-bottom: 1px solid rgb(0, 0, 0);">&nbsp;
+					</td>
+			</tr>
+			<tr>
+				<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+				<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+				<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+				<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+				<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">0</td>
+				<td style="border-left-width: 1px; border-right-width: 1px; border-top-width: 1px;">1</td>
+			</tr>
+		</tbody></table></td>
+	</tr>
+</tbody></table>
+		</div>
+	</div>
+<p>&nbsp;</p>
+<div class="bl2">
+  <table border="1" cellspacing="0" cellpadding="4" class="note" style="border-collapse: collapse">
+    <tbody><tr>
+      <td>
+		<h4><font color="#FF0000">Uwaga, pułapka:</font></h4>
+        <p class="bl1">Z uwagi na ustalone formaty danych binarnych w komputerach 
+			<span class="rem">(8, 16 
+			i 32 bity)</span> mnożenie również może dawać niepoprawne rezultaty, gdy 
+			wynik będzie większy od górnego zakresu liczb dla danego formatu, 
+			czyli od</p>
+      <p class="bl1">&nbsp;</p>
+        <p style="text-align: center;">max =
+			2<sup>n</sup> -
+			1, gdzie
+			n - liczba bitów w danym formacie.</p>
+      <p style="text-align: center;">&nbsp;</p>
+        <p class="bl1">Poniżej prezentujemy odpowiedni przykład programowy:</p>
+      <p class="bl1">&nbsp;</p>
+      <div align="center">
+        <table border="0" cellpadding="0" style="border-collapse: collapse">
+          <tbody><tr>
+            <td>
+            <pre id="pas" class="example"><pre><span class="i">program</span> <span class="v">overflow</span>;
+
+<span class="c">{$APPTYPE CONSOLE}</span>
+
+<span class="i">var</span>
+  <span class="v">a</span> : <span class="v">byte</span>;     <span class="c">// dana 8 bitowa</span>
+  <span class="v">b</span> : <span class="v">word</span>;     <span class="c">// dana 16 bitowa</span>
+  <span class="v">c</span> : <span class="v">longword</span>; <span class="c">// dana 32 bitowa</span>
+<span class="i">begin</span>
+  <span class="v">a</span> :=    <span class="n">$10</span>; <span class="c">// 2^4</span>
+  <span class="v">b</span> :=   <span class="n">$100</span>; <span class="c">// 2^8</span>
+  <span class="v">c</span> := <span class="n">$10000</span>; <span class="c">// 2^16</span>
+  <span class="v">writeln</span>(<span class="t">'                     8b    16b         32b'</span>);<br>  <span class="v">writeln</span>(<span class="t">'Przed mnozeniem : '</span>,<span class="v">a</span>:<span class="n">5</span>,<span class="v">b</span>:<span class="n">7</span>,<span class="v">c</span>:<span class="n">12</span>);<br>  <span class="v">a</span> := <span class="v">a</span> * <span class="v">a</span>;  <span class="c">// a nie pomieści wyniku 2^8!</span>
+  <span class="v">b</span> := <span class="v">b</span> * <span class="v">b</span>;  <span class="c">// b nie pomieści wyniku 2^16!</span>
+  <span class="v">c</span> := <span class="v">c</span> * <span class="v">c</span>;  <span class="c">// c nie pomieści wyniku 2^32!</span>
+  <span class="v">writeln</span>(<span class="t">'Po mnozeniu     : '</span>,<span class="v">a</span>:<span class="n">5</span>,<span class="v">b</span>:<span class="n">7</span>,<span class="v">c</span>:<span class="n">12</span>);<br>  <span class="v">readln</span>;<br><span class="i">end</span>. </pre></pre>
+            </td>
+          </tr>
+        </tbody></table>
+      </div>
+      <p class="bl1">&nbsp;</p>
+        <div align="center">
+          <table id="table138" style="border-collapse: collapse;" border="0" cellpadding="4">
+            <tbody><tr>
+              <td>
+              <pre class="program">                     8b    16b         32b<br>Przed mnozeniem :    16    256       65536<br>Po mnozeniu     :     0      0           0</pre>
+              </td>
+            </tr>
+          </tbody></table>
+        </div>
+		</td>
+    </tr>
+  </tbody></table>
+</div>
+</div>
+<p>&nbsp;</p>
+<table id="table132" style="float: right; margin-left: 8px; border-collapse: collapse;" border="1" cellpadding="4">
+	<tbody><tr>
+		<td>
+		<p style="text-align: center;" align="center">
+		<img src="./Binarne Kodowanie Liczb - Operacje arytmetyczne w systemie dwójkowym_files/einstein.gif" border="0" height="64" width="54"><br>
+		<span class="small"><font color="#ff0000"><b>DLA<br>
+		GENIUSZA</b></font></span></p></td>
+	</tr>
+</tbody></table>
+<h2 class="bl1"><a name="Dzielenie">
+Dzielenie dwójkowe</a></h2>
+<div class="bl1">
+<p class="bl1">Dzielenie binarne jest najbardziej skomplikowaną operacją arytmetyczną z 
+	dotychczas opisywanych. Wymyślono wiele algorytmów efektywnego dzielenia, 
+	ale dla potrzeb tego opracowania wystarczy znany wam algorytm szkolny, który 
+	polega na cyklicznym odejmowaniu odpowiednio przesuniętego dzielnika od 
+	dzielnej. W systemie dwójkowym jest to szczególnie proste, ponieważ 
+	dzielnika nie musimy mnożyć.</p>
+<p class="bl1">&nbsp;</p>
+<p class="bl1">
+<b>Przykład:</b></p>
+<p class="bl2">Podzielimy liczbę 
+			1101<sub>(2)</sub> 
+		przez 10<sub>(2)</sub> 
+		(13<sub>(10)</sub> : 2<sub>(10)</sub>). </p>
+	<div class="bl1">
+		<div class="bl1">
+			<ol>
+  <li>Przesuwamy w lewo dzielnik, aż zrówna się jego najstarszy, 
+			niezerowy bit z najstarszym, niezerowym bitem dzielnej. Nad dzielną 
+			rysujemy kreseczkę: </li>
+</ol>
+<table id="table125" style="border-collapse: collapse;" border="0" cellpadding="0" class="bl2">
+  <tbody><tr>
+    <td style="border-top: 1px solid rgb(0, 0, 0);">
+    1101</td>
+    <td>&nbsp;- dzielna</td>
+  </tr>
+  <tr>
+    <td>10</td>
+    <td>&nbsp;- przesunięty dzielnik</td>
+  </tr>
+</tbody></table>
+<p>&nbsp;</p>
+			<ol>
+  <li value="2">Porównujemy dzielną z dzielnikiem. Jeśli dzielna jest 
+			większa lub równa dzielnikowi, to odejmujemy od niej dzielnik. Ponad 
+			kreską na pozycji ostatniej cyfry dzielnika piszemy 1. Jeśli dzielna 
+			jest mniejsza od dzielnika, to nie wykonujemy odejmowania, lecz 
+			przesuwamy dzielnik o 1 pozycję w prawo i powtarzamy opisane 
+			operacje. Jeśli w ogóle dzielnika nie da się odjąć od dzielnej 
+			<span class="rem">(np. 
+			przy dzieleniu 7 przez 9)</span>, to wynik dzielenia wynosi 0, a dzielna ma 
+			w takim przypadku wartość reszty z dzielenia. W naszym przykładzie 
+			odejmowanie to jest możliwe, zatem:</li>
+</ol>
+<table id="table126" style="border-collapse: collapse;" border="0" cellpadding="0" class="bl2">
+  <tbody><tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>1</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td nowrap="nowrap">&nbsp;- pierwsza cyfra wyniku dzielenia</td>
+  </tr>
+  <tr>
+    <td style="border-top: 1px solid rgb(0, 0, 0);">&nbsp;</td>
+    <td style="border-top: 1px solid rgb(0, 0, 0);">
+    1</td>
+    <td style="border-top: 1px solid rgb(0, 0, 0);">
+    1</td>
+    <td style="border-top: 1px solid rgb(0, 0, 0);">
+    0</td>
+    <td style="border-top: 1px solid rgb(0, 0, 0);">
+    1</td>
+    <td nowrap="nowrap">&nbsp;- dzielna</td>
+  </tr>
+  <tr>
+    <td>-</td>
+    <td>1</td>
+    <td>0</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td nowrap="nowrap">&nbsp;- przesunięty dzielnik</td>
+  </tr>
+  <tr>
+    <td style="border-top: 1px solid rgb(0, 0, 0);">&nbsp;</td>
+    <td style="border-top: 1px solid rgb(0, 0, 0);">
+    0</td>
+    <td style="border-top: 1px solid rgb(0, 0, 0);">
+    1</td>
+    <td style="border-top: 1px solid rgb(0, 0, 0);">
+    0</td>
+    <td style="border-top: 1px solid rgb(0, 0, 0);">
+    1</td>
+    <td nowrap="nowrap">&nbsp;- wynik odejmowania dzielnika od dzielnej</td>
+  </tr>
+</tbody></table>
+<p>&nbsp;</p>
+			<ol>
+  <li value="3">Dzielnik przesuwamy o jeden bit w prawo i próbujemy 
+			tego samego z otrzymaną różnicą. Jeśli odejmowanie jest możliwe, to 
+			nad kreską w następnej kolumnie dopisujemy 1, odejmujemy dzielnik od 
+			różnicy, przesuwamy go o 1 bit w prawo i kontynuujemy. Jeśli 
+			odejmowanie nie jest możliwe, to dopisujemy nad kreską 0, przesuwamy 
+			dzielnik o 1 bit w prawo i kontynuujemy.</li>
+</ol>
+<table id="table127" style="border-collapse: collapse;" border="0" cellpadding="0" class="bl2">
+  <tbody><tr>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>1</td>
+    <td>1</td>
+    <td>0</td>
+    <td nowrap="nowrap">&nbsp;- wynik dzielenia</td>
+  </tr>
+  <tr>
+    <td style="border-top: 1px solid rgb(0, 0, 0);">&nbsp;</td>
+    <td style="border-top: 1px solid rgb(0, 0, 0);">
+    1</td>
+    <td style="border-top: 1px solid rgb(0, 0, 0);">
+    1</td>
+    <td style="border-top: 1px solid rgb(0, 0, 0);">
+    0</td>
+    <td style="border-top: 1px solid rgb(0, 0, 0);">
+    1</td>
+    <td nowrap="nowrap">&nbsp;- dzielna</td>
+  </tr>
+  <tr>
+    <td>-</td>
+    <td>1</td>
+    <td>0</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td nowrap="nowrap">&nbsp;- przesunięty dzielnik</td>
+  </tr>
+  <tr>
+    <td style="border-top: 1px solid rgb(0, 0, 0);">&nbsp;</td>
+    <td style="border-top: 1px solid rgb(0, 0, 0);">
+    0</td>
+    <td style="border-top: 1px solid rgb(0, 0, 0);">
+    1</td>
+    <td style="border-top: 1px solid rgb(0, 0, 0);">
+    0</td>
+    <td style="border-top: 1px solid rgb(0, 0, 0);">
+    1</td>
+    <td nowrap="nowrap">&nbsp;- dzielna po pierwszym odejmowaniu przesuniętego 
+					dzielnika</td>
+  </tr>
+  <tr>
+    <td>-</td>
+    <td>&nbsp;</td>
+    <td>1</td>
+    <td>0</td>
+    <td>&nbsp;</td>
+    <td nowrap="nowrap">&nbsp;- przesunięty dzielnik</td>
+  </tr>
+  <tr>
+    <td style="border-top: 1px solid rgb(0, 0, 0);">&nbsp;</td>
+    <td style="border-top: 1px solid rgb(0, 0, 0);">
+    0</td>
+    <td style="border-top: 1px solid rgb(0, 0, 0);">
+    0</td>
+    <td style="border-top: 1px solid rgb(0, 0, 0);">
+    0</td>
+    <td style="border-top: 1px solid rgb(0, 0, 0);">
+    1</td>
+    <td nowrap="nowrap">&nbsp;- dzielna po drugim odejmowaniu przesuniętego 
+					dzielnika</td>
+  </tr>
+  <tr>
+    <td>-</td>
+    <td>&nbsp;</td>
+    <td>&nbsp;</td>
+    <td>1</td>
+    <td>0</td>
+    <td nowrap="nowrap">&nbsp;- dzielnik na swoim miejscu, odejmowanie 
+					niemożliwe</td>
+  </tr>
+  <tr>
+    <td style="border-top: 1px solid rgb(0, 0, 0);">&nbsp;</td>
+    <td style="border-top: 1px solid rgb(0, 0, 0);">
+    0</td>
+    <td style="border-top: 1px solid rgb(0, 0, 0);">
+    0</td>
+    <td style="border-top: 1px solid rgb(0, 0, 0);">
+    0</td>
+    <td style="border-top: 1px solid rgb(0, 0, 0);">
+    1</td>
+    <td nowrap="nowrap">&nbsp;- reszta z dzielenia</td>
+  </tr>
+</tbody></table>
+<p>&nbsp;</p>
+			<ol>
+  <li value="4">Operacje te wykonujemy dotąd, aż dzielnik osiągnie 
+			swoją pierwotną wartość. Pozostała dzielna jest resztą z dzielenia. 
+			Oczywiście w tym momencie możemy dalej kontynuować odejmowanie wg 
+			opisanych zasad otrzymując kolejne cyfry ułamkowe - identycznie 
+			postępujemy w systemie dziesiętnym. Jednakże pozostawimy ten problem 
+			do rozwiązania bardziej ambitnym czytelnikom.</li>
+</ol>
+		</div>
+<p class="bl1">&nbsp;</p>
+	</div>
+<p class="bl1">W naszym przykładzie otrzymaliśmy wynik dzielenia równy:</p>
+<p class="bl1">&nbsp;</p>
+<p class="bl2">1101<sub>(2)</sub> 
+		: 10<sub>(2)</sub> =
+<font color="#000000">110<sub>(2)</sub></font> 
+		i resztę <font color="#000000">1<sub>(2)</sub></font> 
+		(6<sub>(10)</sub> 
+		i 1<sub>(10)</sub>)</p>
+<p style="text-align: center;">&nbsp;</p>
+<p class="bl1">Jest to wynik poprawny, gdyż 2 mieści się w 13 sześć razy i pozostaje 
+		reszta 1. </p>
+<p class="bl1">&nbsp;</p>
+<p class="bl1">
+<b>Przykład:</b></p>
+<p class="bl2">Dla wprawki podzielmy liczbę 
+			<font color="#000000">110101101<sub>(2)</sub></font> 
+		przez <font color="#000000">111<sub>(2)</sub>
+</font>(429<sub>(10)</sub> przez
+			7<sub>(10)</sub>):
+			</p>
+	<div class="bl1">
+<p class="bl2">&nbsp;</p>
+<p class="bl2"><font color="#000000" face="Courier New">&nbsp; 0111101</font> - wynik 
+			dzielenia<font color="#000000" face="Courier New"><br>
+<span style="text-decoration: overline;">110101101</span> : 111<br>111&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 
+			</font>&nbsp;- nie da się odjąć, nad kreską 0<font color="#000000" face="Courier New"><br>
+<span style="text-decoration: overline;">110101101</span><br>&nbsp;111&nbsp;&nbsp;&nbsp;&nbsp; 
+			</font>&nbsp;- da się odjąć, nad kreską 1<font color="#000000" face="Courier New"><br>
+<span style="text-decoration: overline;">&nbsp;11001101</span><br>&nbsp; 111&nbsp;&nbsp;&nbsp; 
+			</font>&nbsp;- da się odjąć, nad kreską 1<font color="#000000" face="Courier New"><br>
+<span style="text-decoration: overline;">&nbsp; 1011101</span><br>&nbsp;&nbsp; 111&nbsp;&nbsp; 
+			</font>&nbsp;- da się odjąć, nad kreską 1<font color="#000000" face="Courier New"><br>
+<span style="text-decoration: overline;">&nbsp;&nbsp; 100101</span><br>&nbsp;&nbsp;&nbsp; 111&nbsp; 
+			</font>&nbsp;- da się odjąć, nad kreską 1<font color="#000000" face="Courier New"><br>
+<span style="text-decoration: overline;">&nbsp;&nbsp;&nbsp;&nbsp; 1001</span><br>&nbsp;&nbsp;&nbsp;&nbsp; 111 
+			</font>&nbsp;- nie da się odjąć, nad kreską 0<font color="#000000" face="Courier New"><br>
+<span style="text-decoration: overline;">&nbsp;&nbsp;&nbsp;&nbsp; 1001</span><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 111</font> - da się odjąć, nad kreską 1, koniec<font color="#000000" face="Courier New"><br>
+<span style="text-decoration: overline;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; 10</span></font> - 
+			reszta z dzielenia </p>
+<p class="bl2">&nbsp;</p>
+<p class="bl2">110101101<sub>(2)</sub> 
+		: 111<sub>(2)</sub> = 111101<sub>(2)</sub> 
+		i reszta 10<sub>(2)</sub> 
+		(429<sub>(10)</sub> : 7<sub>(10)</sub> = 61<sub>(10)</sub> 
+		i reszta 2<sub>(10)</sub>).</p>
+	</div>
+</div><ins class="adsbygoogle" data-adsbygoogle-status="done" style="display: none; width: auto; height: auto;"><ins id="aswift_0_expand" style="display:inline-table;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent"><ins id="aswift_0_anchor" style="display:block;border:none;height:0px;margin:0;padding:0;position:relative;visibility:visible;width:0px;background-color:transparent"><iframe width="0" height="0" frameborder="0" marginwidth="0" marginheight="0" vspace="0" hspace="0" allowtransparency="true" scrolling="no" allowfullscreen="true" onload="var i=this.id,s=window.google_iframe_oncopy,H=s&amp;&amp;s.handlers,h=H&amp;&amp;H[i],w=this.contentWindow,d;try{d=w.document}catch(e){}if(h&amp;&amp;d&amp;&amp;(!d.body||!d.body.firstChild)){if(h.call){setTimeout(h,0)}else if(h.match){try{h=s.upd(h,i)}catch(e){}w.location.replace(h)}}" id="aswift_0" name="aswift_0" style="left:0;position:absolute;top:0;" src="./Binarne Kodowanie Liczb - Operacje arytmetyczne w systemie dwójkowym_files/saved_resource(1).html"></iframe></ins></ins></ins>
+<p class="bl2">&nbsp;</p>
+<h2 class="bl1"><a name="Zadania">
+Zadania</a></h2>
+<script language="javascript" src="./Binarne Kodowanie Liczb - Operacje arytmetyczne w systemie dwójkowym_files/test_zadan.js.pobrane"></script>
+	<div class="bl1">
+	<h4 class="bl1">Zadanie 1 <span style="font-weight: 400;">(łatwe)</span></h4>
+<form name="frmzad01" class="dgray2">
+  <div align="center">
+  Wykonaj podane niżej dodawania w systemie dwójkowym:<table id="table128" style="border-collapse: collapse;" border="0" cellpadding="4">
+    <tbody><tr>
+      <td align="right">11001&nbsp;+&nbsp;111 =</td>
+      <td><input name="T1" size="16" style="text-align: right;" type="text">&nbsp;&nbsp;
+		<input value="Testuj" name="B2" onclick="testuj_odp(&#39;100000&#39;,document.frmzad01.T1,1);" type="button"></td>
+      <td width="60">
+      <p id="wyn1">.</p></td>
+      <td rowspan="5">
+      <input value="Czyść" onclick="czysc_odp(1,5);" name="B1" type="reset"></td>
+    </tr>
+    <tr>
+      <td align="right">11111&nbsp;+&nbsp;100 =</td>
+      <td><input name="T2" size="16" style="text-align: right;" type="text">&nbsp;&nbsp;
+		<input value="Testuj" name="B3" onclick="testuj_odp(&#39;100011&#39;,document.frmzad01.T2,2);" type="button"></td>
+      <td width="60">
+      <p id="wyn2">.</p></td>
+    </tr>
+    <tr>
+      <td align="right">111&nbsp;+&nbsp;1001 =</td>
+      <td><input name="T3" size="16" style="text-align: right;" type="text">&nbsp;&nbsp;
+		<input value="Testuj" name="B4" onclick="testuj_odp(&#39;10000&#39;,document.frmzad01.T3,3);" type="button"></td>
+      <td width="60">
+      <p id="wyn3">.</p></td>
+    </tr>
+    <tr>
+      <td align="right">1010101&nbsp;+&nbsp;10101 =</td>
+      <td><input name="T4" size="16" style="text-align: right;" type="text">&nbsp;&nbsp;
+		<input value="Testuj" name="B5" onclick="testuj_odp(&#39;1101010&#39;,document.frmzad01.T4,4);" type="button"></td>
+      <td width="60">
+      <p id="wyn4">.</p></td>
+    </tr>
+    <tr>
+      <td align="right">11110000&nbsp;+&nbsp;111000 
+					=</td>
+      <td><input name="T5" size="16" style="text-align: right;" type="text">&nbsp;&nbsp;
+		<input value="Testuj" name="B6" onclick="testuj_odp(&#39;100101000&#39;,document.frmzad01.T5,5);" type="button"></td>
+      <td width="60">
+      <p id="wyn5">.</p></td>
+    </tr>
+  </tbody></table>
+	</div>
+</form>
+<p>&nbsp;</p>
+<h4 class="bl1">Zadanie 2 <span style="font-weight: 400;">(łatwe)</span></h4>
+<form name="frmzad02" class="dgray2">
+  <div align="center">
+  Wykonaj podane niżej odejmowania w 
+		systemie dwójkowym:<table id="table129" style="border-collapse: collapse;" border="0" cellpadding="4">
+    <tbody><tr>
+      <td align="right">1000000&nbsp;-&nbsp;1 =</td>
+      <td><input name="T6" size="16" style="text-align: right;" type="text">&nbsp;&nbsp;
+		<input value="Testuj" name="B7" onclick="testuj_odp(&#39;111111&#39;,document.frmzad02.T6,6);" type="button"></td>
+      <td width="60">
+      <p id="wyn6">.</p></td>
+      <td rowspan="5">
+      <input value="Czyść" onclick="czysc_odp(6,10);" name="B8" type="reset"></td>
+    </tr>
+    <tr>
+      <td align="right">11110000&nbsp;-&nbsp;11 =</td>
+      <td><input name="T7" size="16" style="text-align: right;" type="text">&nbsp;&nbsp;
+		<input value="Testuj" name="B9" onclick="testuj_odp(&#39;11101101&#39;,document.frmzad02.T7,7);" type="button"></td>
+      <td width="60">
+      <p id="wyn7">.</p></td>
+    </tr>
+    <tr>
+      <td align="right">1100110011&nbsp;-&nbsp;111 =</td>
+      <td><input name="T8" size="16" style="text-align: right;" type="text">&nbsp;&nbsp;
+		<input value="Testuj" name="B10" onclick="testuj_odp(&#39;1100101100&#39;,document.frmzad02.T8,8);" type="button"></td>
+      <td width="60">
+      <p id="wyn8">.</p></td>
+    </tr>
+    <tr>
+      <td align="right">11001011&nbsp;-&nbsp;1100111 =</td>
+      <td><input name="T9" size="16" style="text-align: right;" type="text">&nbsp;&nbsp;
+		<input value="Testuj" name="B11" onclick="testuj_odp(&#39;1100100&#39;,document.frmzad02.T9,9);" type="button"></td>
+      <td width="60">
+      <p id="wyn9">.</p></td>
+    </tr>
+    <tr>
+      <td align="right">110111&nbsp;-&nbsp;1011 
+					=</td>
+      <td><input name="T10" size="16" style="text-align: right;" type="text">&nbsp;&nbsp;
+		<input value="Testuj" name="B12" onclick="testuj_odp(&#39;101100&#39;,document.frmzad02.T10,10);" type="button"></td>
+      <td width="60">
+      <p id="wyn10">.</p></td>
+    </tr>
+  </tbody></table>
+	</div>
+</form>
+<p>&nbsp;</p>
+<h4 class="bl1">Zadanie 3 <span style="font-weight: 400;">(łatwe)</span></h4>
+<form name="frmzad03" class="dgray2">
+  <div align="center">
+  Wykonaj podane niżej mnożenia w systemie 
+		dwójkowym:<table id="table130" style="border-collapse: collapse;" border="0" cellpadding="4">
+    <tbody><tr>
+      <td align="right">1101&nbsp;&#8226; 101 =</td>
+      <td><input name="T11" size="16" style="text-align: right;" type="text">&nbsp;&nbsp;
+		<input value="Testuj" name="B13" onclick="testuj_odp(&#39;1000001&#39;,document.frmzad03.T11,11);" type="button"></td>
+      <td width="60">
+      <p id="wyn11">.</p></td>
+      <td rowspan="5">
+      <input value="Czyść" onclick="czysc_odp(11,15);" name="B14" type="reset"></td>
+    </tr>
+    <tr>
+      <td align="right">11&nbsp;&#8226; 1101 =</td>
+      <td><input name="T12" size="16" style="text-align: right;" type="text">&nbsp;&nbsp;
+		<input value="Testuj" name="B15" onclick="testuj_odp(&#39;100111&#39;,document.frmzad03.T12,12);" type="button"></td>
+      <td width="60">
+      <p id="wyn12">.</p></td>
+    </tr>
+    <tr>
+      <td align="right">1111&nbsp;&#8226; 11 =</td>
+      <td><input name="T13" size="16" style="text-align: right;" type="text">&nbsp;&nbsp;
+		<input value="Testuj" name="B16" onclick="testuj_odp(&#39;101101&#39;,document.frmzad03.T13,13);" type="button"></td>
+      <td width="60">
+      <p id="wyn13">.</p></td>
+    </tr>
+    <tr>
+      <td align="right">11011&nbsp;&#8226; 1011 =</td>
+      <td><input name="T14" size="16" style="text-align: right;" type="text">&nbsp;&nbsp;
+		<input value="Testuj" name="B17" onclick="testuj_odp(&#39;100101001&#39;,document.frmzad03.T14,14);" type="button"></td>
+      <td width="60">
+      <p id="wyn14">.</p></td>
+    </tr>
+    <tr>
+      <td align="right">1111&nbsp;&#8226; 1111 
+					=</td>
+      <td><input name="T15" size="16" style="text-align: right;" type="text">&nbsp;&nbsp;
+		<input value="Testuj" name="B18" onclick="testuj_odp(&#39;11100001&#39;,document.frmzad03.T15,15);" type="button"></td>
+      <td width="60">
+      <p id="wyn15">.</p></td>
+    </tr>
+  </tbody></table>
+	</div>
+</form>
+<p>&nbsp;</p>
+<h4 class="bl1">Zadanie 4 <span style="font-weight: 400;">(łatwe)</span></h4>
+<form name="frmzad04" class="dgray2">
+  <div align="center">
+  Wykonaj podane niżej dzielenia w systemie 
+		binarnym<table id="table131" style="border-collapse: collapse;" border="0" cellpadding="4">
+    <tbody><tr>
+      <td align="right">11111&nbsp;:&nbsp;11 =</td>
+      <td><input name="T16" size="10" style="text-align: right;" type="text">&nbsp;i 
+					reszta &nbsp;<input name="T17" size="10" style="text-align: right;" type="text">&nbsp;&nbsp;<input value="Testuj" name="B19" onclick="testuj_odp2(&#39;1010&#39;,&#39;1&#39;,document.frmzad04.T16,document.frmzad04.T17,16);" type="button"></td>
+      <td width="60">
+      <p id="wyn16">.</p></td>
+      <td rowspan="3">
+      <input value="Czyść" onclick="czysc_odp(16,21);" name="B20" type="reset"></td>
+    </tr>
+    <tr>
+      <td align="right">10000&nbsp;:&nbsp;11 =</td>
+      <td><input name="T18" size="10" style="text-align: right;" type="text">&nbsp;i 
+					reszta &nbsp;<input name="T19" size="10" style="text-align: right;" type="text">&nbsp;&nbsp;<input value="Testuj" name="B21" onclick="testuj_odp2(&#39;101&#39;,&#39;1&#39;,document.frmzad04.T18,document.frmzad04.T19,17);" type="button"></td>
+      <td width="60">
+      <p id="wyn17">.</p></td>
+    </tr>
+    <tr>
+      <td align="right">101101111&nbsp;:&nbsp;1010 =</td>
+      <td><input name="T20" size="10" style="text-align: right;" type="text">&nbsp;i 
+					reszta &nbsp;<input name="T21" size="10" style="text-align: right;" type="text">&nbsp;&nbsp;<input value="Testuj" name="B22" onclick="testuj_odp2(&#39;100100&#39;,&#39;111&#39;,document.frmzad04.T20,document.frmzad04.T21,18);" type="button"></td>
+      <td width="60">
+      <p id="wyn18">.</p></td>
+    </tr>
+  </tbody></table>
+	</div>
+</form>
+<p>&nbsp;</p>
+<h4 class="bl1">Zadanie 5 <span style="font-weight: 400;">(średnie)</span></h4>
+<p class="bl2">Czy nie wykonując dzielenia binarnego potrafiłbyś oszacować ilość 
+		cyfr wyniku na podstawie znajomości dzielnej i dzielnika? Odpowiedź 
+		uzasadnij.</p>
+<p class="bl2">&nbsp;</p>
+<h4 class="bl1">Zadanie 6 <span style="font-weight: 400;">(łatwe)</span></h4>
+<p class="bl2">Podaj szybką regułę mnożenia liczb binarnych przez 
+		2<sup>n</sup>, gdzie 
+		n = 1,2,3...</p>
+<p class="bl2">&nbsp;</p>
+<h4 class="bl1">Zadanie 7 <span style="font-weight: 400;">(łatwe)</span></h4>
+<p class="bl2">Podaj szybką regułę dzielenia liczb binarnych przez 
+		2<sup>n</sup>, gdzie 
+		n = 1,2,3...</p>
+<p class="bl2">&nbsp;</p>
+<h4 class="bl1">Zadanie 8 <span style="font-weight: 400;">(średnie)</span></h4>
+<p class="bl2">Podaj szybką regułę mnożenia liczby binarnej przez 
+		10<sub>(10)</sub>.</p>
+<p class="bl2">&nbsp;</p>
+<h4 class="bl1">Zadanie 9 <span style="font-weight: 400;">(średnie)</span></h4>
+<p class="bl2">Operacje arytmetyczne dodawania, odejmowania i mnożenia mogły w 
+		przypadku ustalonego formatu liczb dawać niepoprawne wyniki. Czy taką 
+		cechę posiada również operacja dzielenia dwójkowego? Odpowiedź 
+		uzasadnij.</p>
+<p class="bl2">&nbsp;</p>
+<h4 class="bl1">Zadanie 10 <span style="font-weight: 400;">(średnie)</span></h4>
+<p class="bl2">Jakie wartości może przyjmować reszta z dzielenia całkowitego dwóch 
+	liczb? Jaki wniosek wyciągniesz, jeśli jest ona różna od zera i równa zero?</p>
+</div>
+<p class="bl1">&nbsp;</p>
+<hr color="#C0C0C0" size="1">
+<p style="margin-top: 0pt; margin-bottom: 0pt;" class="bl1">Zobacz dalej...</p>
+<p style="margin-top: 0pt; margin-bottom: 0pt;" class="bl1"><span class="small">
+<a href="http://eduinf.waw.pl/inf/alg/006_bin/0009.php">Kody binarne</a> | <a href="http://eduinf.waw.pl/inf/alg/006_bin/0010.php">Naturalny system dwójkowy</a> 
+| <a href="http://eduinf.waw.pl/inf/alg/006_bin/0011.php">Dwójkowy system stałoprzecinkowy</a> | <a href="http://eduinf.waw.pl/inf/alg/006_bin/0013.php">Operacje logiczne na bitach</a> 
+| <a href="http://eduinf.waw.pl/inf/alg/006_bin/0014.php">Konwersje dwójkowo ósemkowe i szesnastkowe</a></span></p>
+<div class="bl1">
+
+<hr color="#C0C0C0" size="1">
+<br>
+<form name="frmadminemail" method="post" action="http://eduinf.waw.pl/phpscripts/email_admin.php" class="bs1">
+  <input type="hidden" name="adminemail_tytul" value="Binarne Kodowanie Liczb - Operacje arytmetyczne w systemie dwójkowym">
+  <div align="center">
+    <table border="0" cellpadding="4" style="border-collapse: collapse">
+      <tbody><tr>
+        <td nowrap="">
+          <div align="center">
+            <h3 style="text-align: center">List do administratora Serwisu Edukacyjnego Nauczycieli I LO</h3>
+            <table border="0" cellpadding="4" style="border-collapse: collapse">
+              <tbody><tr>
+                <td align="right">Twój email:</td>
+		<td><input class="respond" type="text" name="adminemail_adres" size="44" onchange="sprawdz_adres()" onkeyup="sprawdz_adres()" onkeypress="sprawdz_adres()"> <span class="t">(jeśli chcesz otrzymać odpowiedź)</span></td>
+              </tr>
+              <tr>
+                <td align="right">Temat:</td>
+                <td><input class="respond" type="text" name="adminemail_temat" size="44" onchange="sprawdz_temat()" onkeyup="sprawdz_temat()" onkeypress="sprawdz_temat()"></td>
+              </tr>
+              <tr>
+                <td align="right"><span class="t">Uwaga:</span></td>
+                <td><input class="respond" type="text" name="adminemail_sp" size="10" onchange="sprawdz_sp()" onkeyup="sprawdz_sp()" onkeypress="sprawdz_sp()"> <b>&#8592; tutaj wpisz wyraz <span style="background-color: #FFFFFF">&nbsp;<font color="#FF0000">ilo</font></span>&nbsp;, inaczej list zostanie <span class="t">zignorowany</span></b></td>
+              </tr>
+            </tbody></table>
+          </div>
+<p align="right" style="text-align: center">Poniżej wpisz swoje uwagi lub pytania dotyczące tego rozdziału <span class="rem">(max. 2048 znaków)</span>.</p>
+<p align="right" style="text-align: center"> <textarea rows="10" name="adminemail_wiadomosc" cols="80" class="respond" onchange="zlicz_znaki()" onkeyup="zlicz_znaki()" onkeypress="zlicz_znaki()"></textarea></p>
+<p align="right" style="text-align: center">Liczba znaków do wykorzystania: <span id="char_count">2048</span></p>
+<p align="right" style="text-align: center"><input type="submit" value="Wyślij"> <input type="reset" value="Kasuj"><input type="hidden" name="feedback" value="/inf/alg/006_bin/0012.php"></p></td>
+<td>&nbsp;</td>
+<td>
+<iframe id="o1fux7fo" name="o1fux7fo" src="./Binarne Kodowanie Liczb - Operacje arytmetyczne w systemie dwójkowym_files/afr.html" frameborder="0" scrolling="no" width="125" height="125">
+&lt;a href='http://kreacje.ogicom.pl/www/delivery/ck.php?n=o1fux7fo&amp;cb=355873114' target='_blank'&gt;
+&lt;img src='http://kreacje.ogicom.pl/www/delivery/avw.php?zoneid=6&amp;cb=355873114&amp;n=o1fux7fo' border='0' alt='' /&gt;&lt;/a&gt;
+</iframe>
+</td>
+</tr>
+</tbody></table>
+</div>
+
+<script type="text/javascript">
+function zlicz_znaki()
+{
+   a = 2048-document.frmadminemail.adminemail_wiadomosc.value.length
+   if(a < 0)
+   {
+      wiadomosc = document.frmadminemail.adminemail_wiadomosc.value
+      wiadomosc = wiadomosc.substr(0,2048)
+      document.frmadminemail.adminemail_wiadomosc.value = wiadomosc
+      a = 0
+   }
+   document.getElementById("char_count").innerHTML = a;
+}
+
+function sprawdz_adres()
+{
+   if(document.frmadminemail.adminemail_adres.value.length > 128)
+   {
+      wiadomosc = document.frmadminemail.adminemail_adres.value
+      wiadomosc = wiadomosc.substr(0,128)
+      document.frmadminemail.adminemail_adres.value = wiadomosc
+   }
+}
+
+function sprawdz_temat()
+{
+   if(document.frmadminemail.adminemail_temat.value.length > 256)
+   {
+      wiadomosc = document.frmadminemail.adminemail_temat.value
+      wiadomosc = wiadomosc.substr(0,256)
+      document.frmadminemail.adminemail_temat.value = wiadomosc
+   }
+}
+
+function sprawdz_sp()
+{
+   if(document.frmadminemail.adminemail_sp.value.length > 3)
+   {
+      wiadomosc = document.frmadminemail.adminemail_sp.value
+      wiadomosc = wiadomosc.substr(0,3)
+      document.frmadminemail.adminemail_sp.value = wiadomosc
+   }
+}
+
+</script>
+
+  </form>
+<p style="text-align: center"><b><span class="t">W związku z dużą liczbą listów do naszego serwisu edukacyjnego nie będziemy udzielać odpowiedzi na prośby rozwiązywania zadań, pisania programów zaliczeniowych, przesyłania materiałów czy też tłumaczenia zagadnień szeroko opisywanych w podręcznikach.</span></b></p>
+<br>
+<hr color="#C0C0C0" size="1">
+<div align="left">
+  <table style="float: right; BORDER-COLLAPSE: collapse; padding-left:8px; padding-right:8px; padding-top:1px; padding-bottom:1px; cellPadding=" 4"="" border="0">
+    <tbody><tr>
+      <td><img src="./Binarne Kodowanie Liczb - Operacje arytmetyczne w systemie dwójkowym_files/i-lo_budynek.jpg"></td><td valign="top"><p align="center" style="text-align: center">&nbsp;&nbsp;&nbsp;I Liceum Ogólnokształcące&nbsp;&nbsp;&nbsp;<br><span class="small">im. Kazimierza Brodzińskiego<br> w Tarnowie</span><br><span class="small">&#169;2017 mgr Jerzy Wałaszek</span></p></td>
+    </tr>
+  </tbody></table>
+</div>
+<span class="small">Dokument ten rozpowszechniany jest zgodnie z zasadami licencji<br>
+<b>GNU Free Documentation License</b>.</span>
+<script language="javascript">
+  document.frmadminemail.adminemail_tytul.value = document.title;
+</script>
+<br><br><br><br><br></div>
+
+<script type="text/javascript">pcba()</script>
+</body></html>

@@ -1,0 +1,13 @@
+li {
+  list-style: none;
+  border: 1px solid black;
+  width: 300px;
+}
+
+.done {
+  color: red;
+}
+
+span {
+  display: block;
+}

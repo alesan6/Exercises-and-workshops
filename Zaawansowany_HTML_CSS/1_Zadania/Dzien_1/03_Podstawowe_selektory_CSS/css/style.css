@@ -1,0 +1,53 @@
+p {
+  background-color: red;
+}
+#inny {
+  background-color: blue;
+}
+.blog {
+  background-color: beige;
+}
+div.blog p {
+  background-color: pink;
+}
+div#rodzic p {
+  background-color: orange;
+}
+div#rodzic > p {
+  background-color: green;
+}
+div#other + p {
+  background-color: brown;
+}
+p#inny ~ p {
+  background-color: purple;
+}
+/* Zadanie 1*/
+
+h1, h2, h3, h4, h5 {
+  background-color: green;
+}
+div.black, div.white {
+  background-color: grey;
+}
+div.important {
+  background-color: green;
+}
+div.white {
+  background-color: blue;
+}
+
+/*Zadanie 2*/
+
+[type="submit"] {
+  background-color: blue;
+}
+[type*="email"] {
+  background-color: green;
+}
+[class*="main-width"] {
+  background-color: red;
+}
+[class^="main-width"] {
+  background-color: pink;
+}

@@ -1,0 +1,45 @@
+
+$list: green, red, blue;
+
+$map:(
+    width1: 300px,
+    width2: 500px,
+    width3: 160px
+);
+
+body{
+    background-color: nth( $list, 1); // nth dla list, nie dla map
+    width: map-get( $map, width2);
+}
+header{
+    background-color: nth($list, 2);
+    width: map-get( $map, width3);
+}
+section{
+    &.main-width{
+        background-color: nth( $list, 3);
+        width: map-get( $map, width1);
+    }
+}
+
+$mapColor:(
+    color1: yellow,
+    color2: blue,
+    color3: pink,
+    color4: red,
+    color5: grey
+);
+
+$colors:( // zadanie 2.
+red: 40,
+green: 60,
+blue: 25
+);
+body{
+    background: map-values($colors); // zadanie 2
+    color: map-get($mapColor, color3);
+}
+footer{
+    background-color: map-get($mapColor, color1);
+    color: map-get($mapColor, color4);
+}

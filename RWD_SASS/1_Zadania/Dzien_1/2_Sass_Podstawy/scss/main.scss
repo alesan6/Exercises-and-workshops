@@ -1,0 +1,23 @@
+header {
+    height: 50vh;
+    border: 2px double red;
+    &.front-page {
+        background: red; // dodałem kolor czerwony
+        border: 1px solid blue; /* dodałem obramowanie */
+    }
+}
+
+$list-color: green;
+$menu-color: red;
+
+.menu {
+    li {
+    color: $list-color;
+}
+}
+
+$section-padding: 20px 0 20px 0;
+
+section {
+    padding: $section-padding;
+}

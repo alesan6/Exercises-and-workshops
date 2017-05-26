@@ -1,0 +1,6 @@
+npm install sass-loader node-sass webpack --save-dev
+to jest ca³a konfiguracja do tego projektu ??
+do kalkulatora znaczy?
+
+jakby to nie posz³o to do konsoli wpisujesz jeszcze npm install css-loader webpack --save-dev     a potem      npm install style-loader webpack --save-dev
+tak do kalkulatora

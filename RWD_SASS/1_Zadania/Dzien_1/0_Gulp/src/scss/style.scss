@@ -1,0 +1,12 @@
+body{
+    background: #000;
+
+    section {
+        background: #fff;
+    }
+    &.error {
+        background: black
+        border: 1 px solid red
+        display: none;
+    }
+}

@@ -1,0 +1,41 @@
+$main-color: red;
+$number: 1.2;
+
+ p {
+    color: lighten($main-color, 40%);
+}
+$color: black;
+@for $i from 1 through 4{
+    h#{$i}{
+        color: $color;
+    }
+    $color: lighten($color, 15%);
+}
+
+//Zadanie 1.
+
+p {
+    font-size: percentage($number);
+}
+
+//Zadanie 2.
+$color1: blue;
+$color2: red;
+
+div {
+    color: mix($color1, $color2);
+}
+
+//Zadanie 3.
+
+@function sum($number1, $number2){
+    @return $number1+$number2;
+}
+.box {
+    width: sum(1000px, 10px);
+    height: 30px;
+    background-color: grey;
+    border: 2px solid pink;
+    border-radius: 15%;
+    text-align: center;
+}

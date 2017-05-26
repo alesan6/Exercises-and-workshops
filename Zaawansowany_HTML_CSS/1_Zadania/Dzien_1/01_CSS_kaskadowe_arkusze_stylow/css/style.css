@@ -1,0 +1,25 @@
+#first {
+    font-size: 20px;
+}
+
+#second {
+    font-size: 10px;
+}
+
+.color {
+    background: yellow;
+}
+
+#section1 {
+    background-color: red;
+}
+div {
+    background-color: blue;
+}
+.sectionWhole {
+    background-color: green;
+}
+
+p {
+    font-size: 12px !important;
+}

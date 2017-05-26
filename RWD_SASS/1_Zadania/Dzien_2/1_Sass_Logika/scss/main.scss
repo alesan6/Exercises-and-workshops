@@ -1,0 +1,56 @@
+$line-height: 45px;
+$font-size: 40px;
+
+*{
+    line-height: $line-height;
+    font-size: $font-size;
+
+}
+// Zadanie 1.
+$timeOfDay: evening;
+@mixin colorBackground($timeOfDay){
+    @if $timeOfDay == morning{
+        background: orange;
+    } @else if $timeOfDay ==midday{
+        background: yellow;
+    } @else if $timeOfDay ==evening{
+        background: navy;
+    } @else if $timeOfDay ==night{
+        background: black;
+    }
+}
+body {
+    @include colorBackground($timeOfDay);
+}
+// Zadanie z wykładowcą
+@for $i from 1 through 4{
+    h#{$i}{
+        font-size: $font-size - $i*4;
+        line-height: $line-height - $i*4;
+
+        @if $i==1{
+            color: red;
+        } @else if $i ==2{
+            color: blue;
+        } @else if $i==3{
+            color: green;
+        } @else if $i==4{
+            color: pink;
+        }
+    }
+}
+
+//Zadanie 2.
+@for $i from 1 through 10{
+    .block_#{$i}{
+        width: 20px;
+        height: 20px;
+        margin-bottom: 10px;
+
+        @if $i%2 == 0{
+            border: 2px solid orange;
+        } @else {
+            border: 2px solid blue;
+        }
+    }
+}

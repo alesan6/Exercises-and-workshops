@@ -1,0 +1,45 @@
+%clearfix{
+&:after, &:before {
+    content: "";
+    display: block;
+    clear: both;
+}
+}
+
+
+.test-mixin {
+ @extend %clearfix;
+
+    .left_box, .right_box {
+        background: #c71717;
+        width: 200px;
+        height: 200px;
+    }
+    .left_box{
+        float: left;
+    }
+    .right_box{
+        float: right;
+    }
+}
+
+%message-box {
+  width: 400px;
+  height: 100px;
+  margin: 10px 0 10px 0;
+  border: 1px solid grey;
+  padding: 5px 0 0 5px;
+}
+
+.success {
+    @extend %message-box;
+    background-color: yellow;
+}
+.error {
+    @extend %message-box;
+    background-color: red;
+}
+.info {
+    @extend %message-box;
+    background-color: green;
+}

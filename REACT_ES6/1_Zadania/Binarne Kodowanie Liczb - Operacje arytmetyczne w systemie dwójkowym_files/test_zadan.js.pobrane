@@ -1,0 +1,35 @@
+// Funkcja sprawdza odpowiedŸ w polu tekstowym i jeœli jest odpowiednia, to wypisuje tekst dobrze.
+// W przeciwnym razie wypisuje tekst Ÿle.
+
+function testuj_odp(odp,wej,wyj)
+{
+  var t;
+  
+  if(wej.value == odp)
+    t = "<font color='Green'>DOBRZE</font>";
+  else
+    t = "<b><font color='Red'>¬LE</font></b>";
+  document.getElementById("wyn"+wyj).innerHTML = t;
+}
+
+// Funkcja sprawdza odpowiedzi w dwóch polach tekstowych i jeœli s¹ identyczne, zalicza je
+
+function testuj_odp2(odp1,odp2,wej1,wej2,wyj)
+{
+  var t;
+  
+  if((wej1.value == odp1) && (wej2.value == odp2))
+    t = "<font color='Green'>DOBRZE</font>";
+  else
+    t = "<b><font color='Red'>¬LE</font></b>";
+  document.getElementById("wyn"+wyj).innerHTML = t;
+}
+
+// Funkcja resetuje odpowiedzi.
+
+function czysc_odp(pierwsza,ostatnia)
+{
+  var i;
+  
+  for(i = pierwsza; i <= ostatnia; i++) document.getElementById("wyn" + i).innerHTML = ".";
+}

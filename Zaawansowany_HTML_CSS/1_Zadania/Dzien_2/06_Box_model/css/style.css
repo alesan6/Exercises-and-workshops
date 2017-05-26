@@ -1,0 +1,14 @@
+.container {
+    width: 400px;
+    border: 1px solid blue;
+    overflow: scroll;
+}
+.one {
+    width: 350px;
+    border: 1px solid red;
+    padding: 15em;
+}
+/*Zadanie 1*/
+/*box-sizing - określa jak liczona jest wielkość box, czy tylko content, czy też razem z borderme
+margin - określa odległość pomiędzy poszczególnymi boxami - margines zewnętrzny.
+padding - margines wewnętrzny - określa odległość między zawartością a borderem. */

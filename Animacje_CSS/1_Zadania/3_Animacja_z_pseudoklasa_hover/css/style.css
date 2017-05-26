@@ -1,0 +1,32 @@
+@keyframes redButton{
+  0%{
+  }
+  30%{
+    transform: scale (10);
+    background: yellow;
+    border: 3px dashed navy;
+  }
+  60%{
+    transform: scale (3);
+    background: green;
+    border-radius: 50%;
+    transform: rotate (50deg);
+  }
+  100%{
+    background: black;
+    transform: matrix(4);
+    transform: scale (1);
+  }
+}
+.red-button {
+    width: 200px;
+    height:200px;
+    background-color: red;
+}
+
+.red-button:hover{
+  animation-name: redButton;
+  animation-delay: 1s;
+  animation-iteration-count: infinite;
+  animation-duration: 1s;
+}

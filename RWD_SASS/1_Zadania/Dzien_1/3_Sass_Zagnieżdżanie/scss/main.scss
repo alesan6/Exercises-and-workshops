@@ -1,0 +1,80 @@
+$list-color: #303030;
+$primary-color: #333030;
+
+$main-width: 1000px;
+
+header{
+	border: 1px solid $primary-color;
+}
+
+ul{
+	list-style: none;
+}
+
+.main-width{
+	width: $main-width;
+
+	.links{
+		li{
+			display: inline-block;
+
+			&:first-child{
+				a{
+					color: orange;
+				}
+			}
+
+			&:last-child{
+				a{
+					color: green;
+				}
+			}
+
+			&:hover{
+				a{
+					color: red;
+				}
+			}
+		}
+	}
+
+	header{
+		.menu{
+			background: $list-color;
+
+			li{
+				display: inline-block;
+				padding-left: 10px;
+
+
+				&:first-child{
+					color: red;
+				}
+
+				&:nth-child(2){
+					color: yellow;
+				}
+
+				&:last-child{
+					color: green;
+				}
+			}
+		}
+	}
+}
+
+footer{
+	.menu{
+		li{
+			display: inline-block;
+
+			&:last-child{
+				float: right;
+			}
+
+			&:hover{
+				color: #b81a1a;
+			}
+		}
+	}
+}
